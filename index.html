@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Afrika Tikkun • Future of Giving</title>
+    <title>Afrika Tikkun • 2050 Experience</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
@@ -20,384 +20,380 @@
 
         body {
             font-family: 'Space Grotesk', sans-serif;
-            background: #faf7f2;
-            color: #2c2c2c;
+            background: #0a0a0f;
+            color: #ffffff;
+            scroll-behavior: smooth;
         }
 
-        /* Original Afrika Tikkun Colors */
+        /* ===== 2050 CORE STYLES ===== */
         :root {
             --primary-red: #C41E3A;
-            --primary-red-light: #d8455e;
-            --primary-red-dark: #9e182f;
+            --primary-glow: rgba(196, 30, 58, 0.5);
             --gold: #D4AF37;
-            --gold-light: #e5c564;
-            --gold-dark: #b8960c;
-            --cream: #fdf6e9;
-            --charcoal: #2c2c2c;
-            --off-white: #faf7f2;
+            --gold-glow: rgba(212, 175, 55, 0.5);
+            --cyber-blue: #00f3ff;
         }
 
-        /* Glass morphism with original colors */
-        .heritage-glass {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(196, 30, 58, 0.1);
-            box-shadow: 0 8px 32px rgba(196, 30, 58, 0.08);
+        /* Ultra-smooth scrolling */
+        html {
+            scroll-behavior: smooth;
         }
 
-        .heritage-card {
-            background: white;
-            border: 1px solid rgba(196, 30, 58, 0.15);
-            border-radius: 24px;
-            box-shadow: 0 10px 30px -10px rgba(196, 30, 58, 0.2);
+        /* Futuristic glass with liquid animation */
+        .quantum-glass {
+            background: rgba(20, 20, 30, 0.7);
+            backdrop-filter: blur(12px) saturate(180%);
+            -webkit-backdrop-filter: blur(12px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
         }
 
-        .heritage-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-red), var(--gold), var(--primary-red));
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
-        }
-
-        .heritage-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 40px -15px rgba(196, 30, 58, 0.3);
-            border-color: var(--primary-red);
-        }
-
-        .heritage-card:hover::before {
-            transform: translateX(0);
-        }
-
-        /* Gold accents */
-        .gold-gradient {
-            background: linear-gradient(135deg, var(--gold), var(--gold-light));
-        }
-
-        .red-gradient {
-            background: linear-gradient(135deg, var(--primary-red), var(--primary-red-light));
-        }
-
-        .heritage-gradient {
-            background: linear-gradient(135deg, var(--primary-red), var(--gold));
-        }
-
-        /* Elegant glow effects */
-        .red-glow {
-            box-shadow: 0 0 20px rgba(196, 30, 58, 0.15);
-        }
-
-        .gold-glow {
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
-        }
-
-        .heritage-glow {
-            box-shadow: 0 0 30px rgba(196, 30, 58, 0.1), 0 0 30px rgba(212, 175, 55, 0.1);
-        }
-
-        /* Animated background pattern */
-        .heritage-bg {
-            background: var(--off-white);
-            position: relative;
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(196, 30, 58, 0.03) 0%, transparent 30%),
-                radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 30%),
-                repeating-linear-gradient(45deg, rgba(196, 30, 58, 0.01) 0px, rgba(196, 30, 58, 0.01) 1px, transparent 1px, transparent 10px);
-        }
-
-        /* Slider with heritage colors */
-        .slider-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 32px;
-            height: 500px;
+        /* Holographic cards */
+        .holo-card {
+            background: linear-gradient(145deg, rgba(30, 30, 40, 0.9), rgba(20, 20, 30, 0.95));
+            backdrop-filter: blur(10px);
             border: 1px solid rgba(196, 30, 58, 0.2);
-        }
-
-        .slider-track {
-            display: flex;
-            width: 400%;
-            height: 100%;
-            animation: slide 20s infinite cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .slider-track:hover {
-            animation-play-state: paused;
-        }
-
-        .slide {
-            width: 25%;
-            height: 100%;
+            border-radius: 24px;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
             position: relative;
+            overflow: hidden;
+            cursor: pointer;
         }
 
-        .slide::before {
+        .holo-card::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(90deg, rgba(196, 30, 58, 0.1), rgba(212, 175, 55, 0.1));
-            z-index: 1;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.7s ease;
         }
 
-        .slide-content {
+        .holo-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--primary-red);
+            box-shadow: 
+                0 20px 40px -15px var(--primary-glow),
+                0 0 30px var(--primary-glow);
+        }
+
+        .holo-card:hover::before {
+            left: 100%;
+        }
+
+        /* 2050 Button with magnetic effect */
+        .btn-2050 {
+            background: linear-gradient(135deg, var(--primary-red), #ff4d6d);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+        }
+
+        .btn-2050::before {
+            content: '';
             position: absolute;
             top: 50%;
             left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
             transform: translate(-50%, -50%);
-            text-align: center;
-            z-index: 2;
-            width: 80%;
-            max-width: 600px;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 2rem;
-            border-radius: 30px;
-            border: 1px solid rgba(196, 30, 58, 0.2);
-            backdrop-filter: blur(10px);
+            transition: width 0.6s, height 0.6s;
         }
 
-        @keyframes slide {
-            0%, 20% { transform: translateX(0); }
-            25%, 45% { transform: translateX(-25%); }
-            50%, 70% { transform: translateX(-50%); }
-            75%, 95% { transform: translateX(-75%); }
-            100% { transform: translateX(0); }
+        .btn-2050:hover {
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 
+                0 15px 30px -10px var(--primary-glow),
+                0 0 30px var(--primary-glow);
+            border-color: white;
         }
 
-        /* Product image styles */
-        .product-image {
+        .btn-2050:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-2050:active {
+            transform: scale(0.98);
+        }
+
+        /* Smooth quantum ripple effect */
+        .quantum-ripple {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quantum-ripple::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+            pointer-events: none;
+        }
+
+        .quantum-ripple:active::after {
+            width: 300px;
+            height: 300px;
+            opacity: 0;
+        }
+
+        /* Holographic product image */
+        .holo-image {
             position: relative;
             overflow: hidden;
             border-radius: 20px 20px 0 0;
             height: 280px;
         }
 
-        .product-image img {
+        .holo-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        .heritage-card:hover .product-image img {
-            transform: scale(1.1);
+        .holo-card:hover .holo-image img {
+            transform: scale(1.15);
         }
 
-        .quick-view {
+        .holo-image::after {
+            content: '';
             position: absolute;
-            bottom: -60px;
+            top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            padding: 16px;
-            transition: bottom 0.3s ease;
-            border-top: 1px solid var(--primary-red);
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(196, 30, 58, 0.2), transparent);
+            opacity: 0;
+            transition: opacity 0.5s;
         }
 
-        .heritage-card:hover .quick-view {
+        .holo-card:hover .holo-image::after {
+            opacity: 1;
+        }
+
+        /* Quantum quick view */
+        .quantum-view {
+            position: absolute;
+            bottom: -80px;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 20px;
+            transition: bottom 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border-top: 2px solid var(--primary-red);
+        }
+
+        .holo-card:hover .quantum-view {
             bottom: 0;
         }
 
-        /* Category chips */
-        .heritage-chip {
-            background: white;
-            border: 1px solid rgba(196, 30, 58, 0.2);
-            color: var(--charcoal);
-            transition: all 0.3s;
-        }
-
-        .heritage-chip:hover,
-        .heritage-chip.active {
-            background: var(--primary-red);
-            border-color: var(--primary-red);
-            color: white;
-            box-shadow: 0 5px 15px rgba(196, 30, 58, 0.3);
-        }
-
-        /* Buttons */
-        .btn-primary {
-            background: var(--primary-red);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 12px;
-            font-weight: 600;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            border: 1px solid var(--primary-red);
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-red-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px -8px rgba(196, 30, 58, 0.4);
-        }
-
-        .btn-gold {
-            background: var(--gold);
-            color: var(--charcoal);
-            padding: 0.75rem 1.5rem;
-            border-radius: 12px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .btn-gold:hover {
-            background: var(--gold-dark);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px -8px rgba(212, 175, 55, 0.4);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary-red);
-            color: var(--primary-red);
-            padding: 0.75rem 1.5rem;
-            border-radius: 12px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .btn-outline:hover {
-            background: var(--primary-red);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* Cart badge */
-        .heritage-badge {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: var(--primary-red);
-            color: white;
-            font-size: 0.7rem;
-            font-weight: 600;
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        /* Price tag */
-        .price-heritage {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-red);
-        }
-
-        /* Loading spinner */
-        .heritage-spinner {
-            border: 3px solid rgba(196, 30, 58, 0.1);
-            border-top-color: var(--primary-red);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 0.8s linear infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        /* Quantity selector */
-        .heritage-quantity {
-            display: inline-flex;
-            border: 1px solid rgba(196, 30, 58, 0.2);
-            border-radius: 12px;
-            overflow: hidden;
-            background: white;
-        }
-
-        .heritage-quantity button {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: white;
-            border: none;
-            color: var(--charcoal);
+        /* 2050 category chips */
+        .chip-2050 {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             cursor: pointer;
-            transition: background 0.2s;
+            letter-spacing: 0.5px;
         }
 
-        .heritage-quantity button:hover {
-            background: rgba(196, 30, 58, 0.05);
-            color: var(--primary-red);
+        .chip-2050:hover {
+            background: var(--primary-red);
+            color: white;
+            transform: scale(1.1) translateY(-2px);
+            box-shadow: 0 10px 20px -5px var(--primary-glow);
+            border-color: white;
         }
 
-        .heritage-quantity input {
-            width: 60px;
-            text-align: center;
-            background: white;
-            border: none;
-            border-left: 1px solid rgba(196, 30, 58, 0.1);
-            border-right: 1px solid rgba(196, 30, 58, 0.1);
-            color: var(--charcoal);
-            font-weight: 600;
+        .chip-2050.active {
+            background: var(--primary-red);
+            color: white;
+            border-color: white;
+            box-shadow: 0 0 30px var(--primary-glow);
         }
 
-        /* Scrollbar */
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Quantum slider */
+        .quantum-slider {
+            position: relative;
+            overflow: hidden;
+            border-radius: 32px;
+            height: 500px;
+            border: 1px solid rgba(196, 30, 58, 0.3);
+            box-shadow: 0 30px 60px -20px black;
+        }
+
+        .slider-track {
+            display: flex;
+            width: 400%;
+            height: 100%;
+            animation: quantumSlide 25s infinite cubic-bezier(0.45, 0.05, 0.2, 0.99);
+        }
+
+        .slider-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes quantumSlide {
+            0%, 15% { transform: translateX(0); }
+            20%, 35% { transform: translateX(-25%); }
+            40%, 55% { transform: translateX(-50%); }
+            60%, 75% { transform: translateX(-75%); }
+            80%, 100% { transform: translateX(0); }
+        }
+
+        /* 2050 scrollbar */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 10px;
         }
 
         ::-webkit-scrollbar-track {
-            background: var(--cream);
+            background: #1a1a24;
+            border-radius: 5px;
         }
 
         ::-webkit-scrollbar-thumb {
-            background: var(--primary-red);
-            border-radius: 4px;
+            background: linear-gradient(135deg, var(--primary-red), #ff4d6d);
+            border-radius: 5px;
+            transition: all 0.3s;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: var(--primary-red-dark);
+            background: linear-gradient(135deg, #ff4d6d, var(--primary-red));
+            box-shadow: 0 0 20px var(--primary-glow);
         }
 
-        /* Text colors */
-        .text-primary-red {
-            color: var(--primary-red);
+        /* Quantum price tag */
+        .price-quantum {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff, var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
         }
 
-        .text-gold {
-            color: var(--gold);
+        /* Magnetic quantity selector */
+        .quantum-quantity {
+            display: inline-flex;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 40px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
         }
 
-        .bg-primary-red {
+        .quantum-quantity button {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .quantum-quantity button:hover {
             background: var(--primary-red);
+            transform: scale(1.1);
         }
 
-        .bg-gold {
-            background: var(--gold);
+        .quantum-quantity input {
+            width: 60px;
+            text-align: center;
+            background: transparent;
+            border: none;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
         }
 
-        .border-primary-red {
-            border-color: var(--primary-red);
+        /* Loading spinner 2050 */
+        .quantum-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(196, 30, 58, 0.1);
+            border-top-color: var(--primary-red);
+            border-right-color: var(--gold);
+            border-radius: 50%;
+            animation: quantumSpin 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
         }
 
-        .border-gold {
-            border-color: var(--gold);
+        @keyframes quantumSpin {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.2); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+
+        /* 2050 header */
+        .quantum-header {
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(196, 30, 58, 0.2);
+            transition: all 0.3s;
+        }
+
+        .quantum-header.scrolled {
+            background: rgba(10, 10, 15, 0.95);
+            box-shadow: 0 10px 30px -10px black;
+        }
+
+        /* Particle background */
+        .particle-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: -1;
+            background: radial-gradient(circle at 20% 30%, rgba(196, 30, 58, 0.1) 0%, transparent 30%),
+                        radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.1) 0%, transparent 30%),
+                        #0a0a0f;
         }
     </style>
 </head>
@@ -405,150 +401,150 @@
     <div id="root"></div>
     <script type="text/babel">
         (function() {
-            // ==================== PREMIUM PRODUCTS ====================
+            // ==================== FIXED PRODUCTS (ALL LINKS WORKING) ====================
             const products = [
                 { 
                     id: 1, 
-                    name: 'Heritage Hoodie', 
+                    name: 'NEBULA HOODIE', 
                     price: 450, 
                     category: 'Hoodies', 
                     image: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=800', 
-                    description: 'Premium cotton fleece with embroidered Afrika Tikkun crest. Double-lined hood with gold drawstring tips.',
-                    details: ['Embroidered crest', 'Gold drawstring tips', 'Double-lined hood', 'Kangaroo pocket', 'Unisex fit'],
+                    description: 'Cosmic black with reflective constellation pattern. Double-lined hood with glow-in-dark drawstrings.',
+                    details: ['Reflective print', 'Glow-in-dark details', 'Double-lined hood', 'Kangaroo pocket', 'Unisex fit'],
                     stock: 45,
                     featured: true,
                     rating: 4.8
                 },
                 { 
                     id: 2, 
-                    name: 'Origin Tee', 
+                    name: 'ORIGIN TEE', 
                     price: 250, 
                     category: 'T-Shirts', 
                     image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800', 
-                    description: '100% organic cotton with gold foil print. Classic fit with reinforced collar.',
-                    details: ['Organic cotton', 'Gold foil print', 'Reinforced collar', 'Classic fit', 'Pre-shrunk'],
+                    description: 'Premium cotton with African continent heat-map print. Breathable and sustainable.',
+                    details: ['100% organic cotton', 'Heat-map print', 'Sustainable', 'Classic fit', 'Pre-shrunk'],
                     stock: 120,
                     featured: true,
                     rating: 4.7
                 },
                 { 
                     id: 3, 
-                    name: 'Legacy Bottle', 
+                    name: 'QUANTUM BOTTLE', 
                     price: 220, 
                     category: 'Bottles', 
                     image: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=800', 
-                    description: 'Stainless steel vacuum bottle with gold accent ring. 24hr cold, 12hr hot.',
-                    details: ['Gold accent ring', '24hr cold retention', '12hr hot retention', 'Stainless steel', 'BPA-free'],
+                    description: 'Smart bottle with temperature display. Keeps drinks cold for 24 hours, hot for 12.',
+                    details: ['LED temp display', '24hr cold retention', '12hr hot retention', 'Stainless steel', 'BPA-free'],
                     stock: 55,
                     featured: true,
                     rating: 4.9
                 },
                 { 
                     id: 4, 
-                    name: 'Heritage Mug', 
+                    name: 'HOLO MUG', 
                     price: 140, 
                     category: 'Cups', 
                     image: 'https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=800', 
-                    description: 'Fine ceramic mug with gold rim and raised logo. Gift boxed.',
-                    details: ['Gold rim', 'Raised logo', 'Ceramic', '14oz capacity', 'Gift boxed'],
+                    description: 'Holographic ceramic mug that shifts colors. Heat-reactive design reveals messages when hot.',
+                    details: ['Holographic finish', 'Heat-reactive', 'Ceramic', '14oz capacity', 'Dishwasher safe'],
                     stock: 200,
                     featured: true,
                     rating: 4.6
                 },
                 { 
                     id: 5, 
-                    name: 'Royal Bag', 
+                    name: 'AETHER BAG', 
                     price: 320, 
                     category: 'Bags', 
-                    image: 'https://images.unsplash.com/photo-1622560480654-962b1f48a50d?w=800', 
-                    description: 'Premium drawstring bag with leather bottom and gold hardware.',
-                    details: ['Leather bottom', 'Gold hardware', 'Water-resistant', 'Internal pocket', 'Adjustable straps'],
+                    image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800', 
+                    description: 'Lightweight techwear backpack with wireless charging pocket. Water-resistant aerospace fabric.',
+                    details: ['Wireless charging', 'Aerospace fabric', 'Water-resistant', 'Laptop sleeve', 'RFID protection'],
                     stock: 35,
                     featured: true,
                     rating: 4.8
                 },
                 { 
                     id: 6, 
-                    name: 'Crest Cap', 
+                    name: 'SOLAR CAP', 
                     price: 200, 
                     category: 'Caps', 
-                    image: 'https://images.unsplash.com/photo-1588850567220-85db1e1c816f?w=800', 
-                    description: 'Premium cotton cap with embroidered crest and gold underbill.',
-                    details: ['Embroidered crest', 'Gold underbill', 'Adjustable strap', 'Moisture-wicking', 'Premium cotton'],
+                    image: 'https://images.unsplash.com/photo-1556909190-eccf4a8bf97a?w=800', 
+                    description: 'Solar-powered cap with built-in UV sensor and LED visor light. Charges your phone in emergencies.',
+                    details: ['Solar panel', 'UV sensor', 'LED visor', 'Phone charging', 'Auto-adjust fit'],
                     stock: 40,
                     featured: true,
                     rating: 4.7
                 },
                 { 
                     id: 7, 
-                    name: 'Premier Hoodie', 
+                    name: 'ZENITH HOODIE', 
                     price: 480, 
                     category: 'Hoodies', 
                     image: 'https://images.unsplash.com/photo-1578768079052-aa76e52ff62e?w=800', 
-                    description: 'Heavyweight fleece with gold embroidery and satin-lined hood.',
-                    details: ['Gold embroidery', 'Satin-lined hood', 'Heavyweight fleece', 'Hidden pocket', 'Limited edition'],
+                    description: 'Limited edition with embroidered gold constellation map. Hidden media pocket with wireless earbud charging.',
+                    details: ['Gold embroidery', 'Wireless charging', 'Premium fleece', 'Limited edition', 'Numbered'],
                     stock: 32,
                     featured: true,
                     rating: 4.9
                 },
                 { 
                     id: 8, 
-                    name: 'Gold Label Tee', 
+                    name: 'TECH TEE', 
                     price: 280, 
                     category: 'T-Shirts', 
                     image: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800', 
-                    description: 'Premium Pima cotton with gold label detail. Luxury feel.',
-                    details: ['Pima cotton', 'Gold label', 'Luxury finish', 'Athletic fit', 'Reinforced seams'],
+                    description: 'Moisture-wicking technical fabric with circuit board pattern. Anti-odor treatment with silver ions.',
+                    details: ['Moisture-wicking', 'Circuit print', 'Anti-odor', '4-way stretch', 'Athletic fit'],
                     stock: 95,
                     featured: false,
                     rating: 4.6
                 },
                 { 
                     id: 9, 
-                    name: 'Classic Bottle', 
+                    name: 'PLASMA BOTTLE', 
                     price: 180, 
                     category: 'Bottles', 
                     image: 'https://images.unsplash.com/photo-1589365278144-c9e705f843ba?w=800', 
-                    description: 'Classic design with embossed logo. Double-wall insulation.',
-                    details: ['Embossed logo', 'Double-wall', 'Leak-proof', 'Wide mouth', 'Easy clean'],
+                    description: 'Color-changing thermal bottle that reacts to temperature. Built-in fruit infuser and hydration tracker.',
+                    details: ['Color-changing', 'Hydration tracker', 'Double-wall', 'Leak-proof', 'Smart cap'],
                     stock: 75,
                     featured: false,
                     rating: 4.7
                 },
                 { 
                     id: 10, 
-                    name: 'Signature Mug', 
+                    name: 'VOID MUG', 
                     price: 150, 
                     category: 'Cups', 
                     image: 'https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=800', 
-                    description: 'Signature ceramic mug with gold interior. Premium presentation.',
-                    details: ['Gold interior', 'Signature design', 'Ceramic', '16oz capacity', 'Premium gift box'],
+                    description: 'Black 3.0 coated ceramic - the blackest black mug. Heat-reactive gold pattern with temperature display.',
+                    details: ['Black 3.0 coating', 'Temperature display', 'Ceramic', '16oz capacity', 'Smart base'],
                     stock: 85,
                     featured: false,
                     rating: 4.8
                 },
                 { 
                     id: 11, 
-                    name: 'Heritage Bag', 
-                    price: 180, 
+                    name: 'NOVA BAG', 
+                    price: 280, 
                     category: 'Bags', 
-                    image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800', 
-                    description: 'Lightweight drawstring with reinforced gold grommets.',
-                    details: ['Gold grommets', 'Reinforced straps', 'Water-resistant', 'Phone pocket', 'Adjustable'],
+                    image: 'https://images.unsplash.com/photo-1622560480654-962b1f48a50d?w=800', 
+                    description: 'Reflective drawstring bag with built-in power bank and LED safety lights. Perfect for night runners.',
+                    details: ['Power bank', 'LED safety lights', 'Reflective', 'Water-resistant', 'Phone pocket'],
                     stock: 60,
                     featured: false,
                     rating: 4.5
                 },
                 { 
                     id: 12, 
-                    name: 'Classic Cap', 
+                    name: 'ORBIT CAP', 
                     price: 220, 
                     category: 'Caps', 
-                    image: 'https://images.unsplash.com/photo-1556909190-eccf4a8bf97a?w=800', 
-                    description: 'Classic six-panel with leather strap and gold buckle.',
-                    details: ['Leather strap', 'Gold buckle', 'Embroidered logo', 'UV protection', 'Premium build'],
+                    image: 'https://images.unsplash.com/photo-1588850567220-85db1e1c816f?w=800', 
+                    description: 'GPS-enabled cap with heads-up display for navigation. Bluetooth connected with voice control.',
+                    details: ['GPS navigation', 'Heads-up display', 'Voice control', 'Bluetooth', 'Solar assist'],
                     stock: 45,
-                    featured: false,
+                    featured: true,
                     rating: 4.6
                 }
             ];
@@ -570,39 +566,29 @@
                 });
 
                 const login = async (email, password) => {
-                    if (email === 'nomathemba@gmail.com' && password === 'Thembi') {
+                    // Only Thembi can login
+                    if (email === 'nomathemba@gmail.com' && password === 'Thembi01') {
                         const userData = { 
                             id: 1, 
                             email: 'nomathemba@gmail.com',
                             firstName: 'Nomathemba',
                             lastName: 'Thembi',
-                            roles: ['ROLE_ADMIN'],
-                            lastLogin: new Date().toISOString()
+                            roles: ['ROLE_ADMIN', 'ROLE_USER'],
+                            loginTime: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+                            sessionId: 'THEMBI_' + Date.now()
                         };
                         setUser(userData);
                         localStorage.setItem('user', JSON.stringify(userData));
                         return { success: true, user: userData };
                     }
                     
-                    if (email && password) {
-                        const userData = { 
-                            id: 2, 
-                            email,
-                            firstName: email.split('@')[0],
-                            lastName: 'User',
-                            roles: ['ROLE_USER']
-                        };
-                        setUser(userData);
-                        localStorage.setItem('user', JSON.stringify(userData));
-                        return { success: true, user: userData };
-                    }
-                    
-                    return { success: false, error: 'Invalid credentials' };
+                    return { success: false, error: 'This demo is exclusively for Nomathemba' };
                 };
 
                 const logout = () => {
                     setUser(null);
                     localStorage.removeItem('user');
+                    window.location.hash = '#/';
                 };
 
                 const isAdmin = () => user?.roles?.includes('ROLE_ADMIN') || false;
@@ -676,57 +662,118 @@
                 { className: 'flex items-center gap-3' },
                 React.createElement(
                     'div',
-                    { className: 'w-10 h-10 bg-primary-red rounded-xl flex items-center justify-center text-white font-bold text-lg' },
+                    { className: 'w-10 h-10 bg-gradient-to-br from-[#C41E3A] to-[#ff4d6d] rounded-xl flex items-center justify-center text-white font-bold text-lg quantum-ripple' },
                     'ATS'
                 ),
                 React.createElement(
                     'div',
                     { className: 'flex flex-col' },
-                    React.createElement('span', { className: 'font-bold text-gray-800' }, 'Afrika Tikkun'),
-                    React.createElement('span', { className: 'text-xs text-gray-500' }, 'Developing Youth')
+                    React.createElement('span', { className: 'font-bold text-white' }, 'Afrika Tikkun'),
+                    React.createElement('span', { className: 'text-xs text-gray-400' }, '2050 Experience')
                 )
             );
 
-            // ==================== SLIDING SHOWCASE ====================
-            const SlidingShowcase = () => {
-                const featured = products.filter(p => p.featured).slice(0, 4);
-                
+            // ==================== PRE-LOGIN PAGE ====================
+            const PreLoginPage = () => {
                 return React.createElement(
                     'div',
-                    { className: 'slider-container heritage-card mb-12' },
+                    { className: 'min-h-screen flex items-center justify-center particle-bg' },
                     React.createElement(
                         'div',
-                        { className: 'slider-track' },
-                        featured.map((product, index) => React.createElement(
+                        { className: 'holo-card p-12 max-w-md w-full text-center' },
+                        React.createElement('div', { className: 'w-20 h-20 bg-gradient-to-br from-[#C41E3A] to-[#ff4d6d] rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6 float' }, '✧'),
+                        React.createElement('h1', { className: 'text-2xl font-bold text-white mb-2' }, 'FROM MOTLWANG'),
+                        React.createElement('p', { className: 'text-gray-300 mb-8' }, 'This private demo has been prepared for you.'),
+                        
+                        React.createElement(
                             'div',
-                            { key: index, className: 'slide' },
-                            React.createElement('img', { 
-                                src: product.image, 
-                                alt: product.name,
-                                className: 'absolute inset-0 w-full h-full object-cover'
-                            }),
+                            { className: 'space-y-4 mb-8' },
                             React.createElement(
                                 'div',
-                                { className: 'slide-content' },
-                                React.createElement('span', { className: 'text-sm uppercase tracking-wider text-primary-red mb-2 block' }, 'Heritage Collection'),
-                                React.createElement('h2', { className: 'text-4xl md:text-5xl font-bold mb-4 text-gray-800' }, product.name),
-                                React.createElement('p', { className: 'text-gray-600 mb-6 max-w-lg mx-auto' }, product.description),
-                                React.createElement(
-                                    'a',
-                                    { href: `#/product/${product.id}`, className: 'btn-primary' },
-                                    'Discover Now',
-                                    React.createElement('i', { className: 'fa-solid fa-arrow-right ml-2' })
-                                )
+                                { className: 'quantum-glass p-4 rounded-xl text-left' },
+                                React.createElement('p', { className: 'text-sm text-gray-400 mb-1' }, 'Email'),
+                                React.createElement('p', { className: 'text-white font-mono' }, 'nomathemba@gmail.com')
+                            ),
+                            React.createElement(
+                                'div',
+                                { className: 'quantum-glass p-4 rounded-xl text-left' },
+                                React.createElement('p', { className: 'text-sm text-gray-400 mb-1' }, 'Password'),
+                                React.createElement('p', { className: 'text-white font-mono' }, 'Thembi01')
                             )
-                        ))
-                    ),
+                        ),
+                        
+                        React.createElement(
+                            'a',
+                            { href: '#/login', className: 'btn-2050 w-full' },
+                            'Continue to Sign In'
+                        ),
+                        
+                        React.createElement('p', { className: 'text-xs text-gray-500 mt-6' },
+                            'Your personal credentials were shared with you privately.'
+                        )
+                    )
+                );
+            };
+
+            // ==================== LOGIN PAGE ====================
+            const Login = () => {
+                const [email, setEmail] = React.useState('');
+                const [password, setPassword] = React.useState('');
+                const [error, setError] = React.useState('');
+                const { login } = useAuth();
+
+                const handleSubmit = async (e) => {
+                    e.preventDefault();
+                    const result = await login(email, password);
+                    if (result.success) {
+                        window.location.hash = '#/';
+                    } else {
+                        setError(result.error);
+                    }
+                };
+
+                return React.createElement(
+                    'div',
+                    { className: 'min-h-screen flex items-center justify-center particle-bg' },
                     React.createElement(
                         'div',
-                        { className: 'absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10' },
-                        [0, 1, 2, 3].map(i => React.createElement(
+                        { className: 'holo-card p-8 w-full max-w-md' },
+                        React.createElement(
                             'div',
-                            { key: i, className: 'w-2 h-2 rounded-full bg-primary-red/30 hover:bg-primary-red transition cursor-pointer' }
-                        ))
+                            { className: 'text-center mb-8' },
+                            React.createElement('div', { className: 'w-16 h-16 bg-gradient-to-br from-[#C41E3A] to-[#ff4d6d] rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4' }, 'ATS'),
+                            React.createElement('h2', { className: 'text-2xl font-bold text-white' }, 'Sign In'),
+                            React.createElement('p', { className: 'text-gray-400 text-sm mt-2' }, 'Use your personal credentials')
+                        ),
+                        
+                        error && React.createElement(
+                            'div',
+                            { className: 'bg-red-500/20 border border-red-500/50 text-red-300 p-3 rounded-lg mb-4 text-sm' },
+                            error
+                        ),
+
+                        React.createElement(
+                            'form',
+                            { onSubmit: handleSubmit },
+                            React.createElement('input', {
+                                type: 'email',
+                                placeholder: 'Email address',
+                                value: email,
+                                onChange: e => setEmail(e.target.value),
+                                className: 'w-full quantum-glass border border-white/10 rounded-xl px-4 py-3 mb-4 text-white focus:outline-none focus:border-[#C41E3A] transition',
+                                required: true
+                            }),
+                            React.createElement('input', {
+                                type: 'password',
+                                placeholder: 'Password',
+                                value: password,
+                                onChange: e => setPassword(e.target.value),
+                                className: 'w-full quantum-glass border border-white/10 rounded-xl px-4 py-3 mb-6 text-white focus:outline-none focus:border-[#C41E3A] transition',
+                                required: true
+                            }),
+
+                            React.createElement('button', { type: 'submit', className: 'btn-2050 w-full' }, 'Enter Experience')
+                        )
                     )
                 );
             };
@@ -735,7 +782,7 @@
             const ChatBot = () => {
                 const [isOpen, setIsOpen] = React.useState(false);
                 const [messages, setMessages] = React.useState([
-                    { id: 1, sender: 'bot', text: 'Welcome to Afrika Tikkun. How may I assist you today?', time: new Date().toLocaleTimeString() }
+                    { id: 1, sender: 'bot', text: 'Welcome to your private 2050 experience, Nomathemba. How may I assist you?', time: new Date().toLocaleTimeString() }
                 ]);
                 const [input, setInput] = React.useState('');
                 const messagesEndRef = React.useRef(null);
@@ -753,15 +800,12 @@
                     const lower = input.toLowerCase();
                     let response = '';
                     
-                    if (lower.includes('hoodie')) response = 'Our Heritage Hoodies range from R450-R480, featuring gold embroidery.';
-                    else if (lower.includes('shirt') || lower.includes('tee')) response = 'T-shirts start at R250. The Origin features our gold foil print.';
-                    else if (lower.includes('bottle')) response = 'Legacy bottles from R180-R220 with gold accent rings.';
-                    else if (lower.includes('shipping')) response = 'Free shipping on all orders. Delivery 3-5 business days.';
-                    else if (lower.includes('return')) response = '30-day return policy with full refund guarantee.';
-                    else if (lower.includes('mission')) response = '100% of proceeds fund youth development programs across South Africa.';
-                    else if (lower.includes('nomathemba') || lower.includes('thembi')) response = 'Welcome, Nomathemba! You have admin access.';
-                    else if (lower.includes('hello') || lower.includes('hi')) response = 'Hello! How may I assist you today?';
-                    else response = 'I can help with product info, pricing, shipping, and returns. What would you like to know?';
+                    if (lower.includes('hoodie')) response = 'Our quantum hoodies range from R450-R480 with wireless charging pockets.';
+                    else if (lower.includes('bottle')) response = 'Smart bottles from R180-R220 with hydration tracking and temperature display.';
+                    else if (lower.includes('bag')) response = 'Techwear bags from R280-R320 with built-in power banks and LED safety.';
+                    else if (lower.includes('cap')) response = 'Our solar caps feature GPS navigation and phone charging from R200-R220.';
+                    else if (lower.includes('thank')) response = "You're welcome, Nomathemba. This experience was created just for you.";
+                    else response = 'I can help with any product information. What would you like to know about our 2050 collection?';
                     
                     setTimeout(() => {
                         setMessages(prev => [...prev, { id: Date.now(), sender: 'bot', text: response, time: new Date().toLocaleTimeString() }]);
@@ -775,22 +819,22 @@
                     { className: 'fixed bottom-6 right-6 z-50' },
                     isOpen && React.createElement(
                         'div',
-                        { className: 'w-80 heritage-card overflow-hidden' },
+                        { className: 'w-80 holo-card overflow-hidden' },
                         React.createElement(
                             'div',
-                            { className: 'bg-primary-red p-4 text-white flex justify-between items-center' },
-                            React.createElement('span', { className: 'font-semibold' }, 'ATS Support'),
+                            { className: 'bg-gradient-to-r from-[#C41E3A] to-[#ff4d6d] p-4 text-white flex justify-between items-center' },
+                            React.createElement('span', { className: 'font-semibold' }, '2050 Assistant'),
                             React.createElement('button', { onClick: () => setIsOpen(false), className: 'text-white/80 hover:text-white' }, '✕')
                         ),
                         React.createElement(
                             'div',
-                            { className: 'h-96 overflow-y-auto p-4 space-y-3 bg-white' },
+                            { className: 'h-96 overflow-y-auto p-4 space-y-3 bg-[#0a0a0f]' },
                             messages.map(msg => React.createElement(
                                 'div',
                                 { key: msg.id, className: `flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}` },
                                 React.createElement(
                                     'div',
-                                    { className: `max-w-[80%] p-3 rounded-lg ${msg.sender === 'user' ? 'bg-primary-red text-white' : 'bg-gray-100 text-gray-800'}` },
+                                    { className: `max-w-[80%] p-3 rounded-xl ${msg.sender === 'user' ? 'bg-gradient-to-r from-[#C41E3A] to-[#ff4d6d] text-white' : 'bg-[#1a1a24] text-gray-200'}` },
                                     React.createElement('p', { className: 'text-sm' }, msg.text),
                                     React.createElement('span', { className: 'text-[10px] opacity-70 mt-1 block' }, msg.time)
                                 )
@@ -799,7 +843,7 @@
                         ),
                         React.createElement(
                             'div',
-                            { className: 'p-3 border-t border-gray-200' },
+                            { className: 'p-3 border-t border-[#C41E3A]/20' },
                             React.createElement(
                                 'div',
                                 { className: 'flex gap-2' },
@@ -808,12 +852,12 @@
                                     value: input,
                                     onChange: e => setInput(e.target.value),
                                     onKeyPress: e => e.key === 'Enter' && handleSend(),
-                                    placeholder: 'Type your message...',
-                                    className: 'flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-primary-red'
+                                    placeholder: 'Ask me anything...',
+                                    className: 'flex-1 bg-[#1a1a24] border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-[#C41E3A]'
                                 }),
                                 React.createElement('button', {
                                     onClick: handleSend,
-                                    className: 'bg-primary-red text-white px-3 rounded-lg hover:bg-primary-red-dark transition'
+                                    className: 'bg-gradient-to-r from-[#C41E3A] to-[#ff4d6d] text-white px-3 rounded-xl hover:shadow-lg transition quantum-ripple'
                                 }, React.createElement('i', { className: 'fa-solid fa-paper-plane' }))
                             )
                         )
@@ -822,7 +866,7 @@
                         'button',
                         {
                             onClick: () => setIsOpen(!isOpen),
-                            className: 'w-14 h-14 bg-primary-red rounded-full flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-all hover:scale-110'
+                            className: 'w-14 h-14 bg-gradient-to-r from-[#C41E3A] to-[#ff4d6d] rounded-full flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-all hover:scale-110 quantum-ripple'
                         },
                         React.createElement('i', { className: `fa-solid ${isOpen ? 'fa-times' : 'fa-comment'} text-xl` })
                     )
@@ -835,25 +879,25 @@
                 
                 return React.createElement(
                     'div',
-                    { className: 'heritage-card group' },
+                    { className: 'holo-card group' },
                     React.createElement(
                         'a',
                         { href: `#/product/${product.id}`, className: 'block' },
                         React.createElement(
                             'div',
-                            { className: 'product-image' },
+                            { className: 'holo-image' },
                             React.createElement('img', { 
                                 src: product.image, 
                                 alt: product.name
                             }),
                             product.featured && React.createElement(
                                 'span',
-                                { className: 'absolute top-4 left-4 bg-gold text-gray-800 text-xs px-3 py-1 rounded-full font-semibold' },
-                                'HERITAGE'
+                                { className: 'absolute top-4 left-4 bg-gradient-to-r from-[#C41E3A] to-[#ff4d6d] text-white text-xs px-3 py-1 rounded-full quantum-ripple' },
+                                '2050'
                             ),
                             React.createElement(
                                 'div',
-                                { className: 'quick-view flex gap-2' },
+                                { className: 'quantum-view flex gap-2' },
                                 React.createElement(
                                     'button',
                                     {
@@ -861,14 +905,14 @@
                                             e.preventDefault();
                                             addToCart(product, 1);
                                         },
-                                        className: 'flex-1 bg-primary-red text-white text-sm py-2 rounded-lg hover:bg-primary-red-dark transition'
+                                        className: 'flex-1 btn-2050 text-sm py-2'
                                     },
-                                    React.createElement('i', { className: 'fa-solid fa-cart-plus mr-2' }),
-                                    'Quick Add'
+                                    React.createElement('i', { className: 'fa-solid fa-bolt mr-2' }),
+                                    'Quantum Add'
                                 ),
                                 React.createElement(
                                     'a',
-                                    { href: `#/product/${product.id}`, className: 'bg-white border border-gray-200 text-gray-700 text-sm py-2 px-3 rounded-lg hover:bg-gray-50 transition' },
+                                    { href: `#/product/${product.id}`, className: 'bg-[#1a1a24] border border-white/10 text-white text-sm py-2 px-3 rounded-xl hover:bg-[#C41E3A]/20 transition quantum-ripple' },
                                     React.createElement('i', { className: 'fa-solid fa-eye' })
                                 )
                             )
@@ -883,18 +927,18 @@
                             React.createElement(
                                 'div',
                                 { className: 'flex justify-between items-start mb-2' },
-                                React.createElement('h3', { className: 'font-semibold text-gray-800 hover:text-primary-red transition' }, product.name),
-                                React.createElement('span', { className: 'text-xs bg-gray-100 px-2 py-1 rounded-full text-gray-600' }, product.category)
+                                React.createElement('h3', { className: 'font-semibold text-white hover:text-[#ff4d6d] transition' }, product.name),
+                                React.createElement('span', { className: 'text-xs bg-[#1a1a24] border border-white/10 px-2 py-1 rounded-full text-gray-300' }, product.category)
                             ),
-                            React.createElement('p', { className: 'text-sm text-gray-500 mb-4 line-clamp-2' }, product.description),
+                            React.createElement('p', { className: 'text-sm text-gray-400 mb-4 line-clamp-2' }, product.description),
                             React.createElement(
                                 'div',
                                 { className: 'flex items-center justify-between' },
-                                React.createElement('span', { className: 'price-heritage' }, `R ${product.price}`),
+                                React.createElement('span', { className: 'price-quantum' }, `R ${product.price}`),
                                 React.createElement(
                                     'div',
-                                    { className: 'flex items-center gap-1 text-sm text-gray-500' },
-                                    React.createElement('i', { className: 'fa-solid fa-star text-gold' }),
+                                    { className: 'flex items-center gap-1 text-sm text-gray-400' },
+                                    React.createElement('i', { className: 'fa-solid fa-star text-[#D4AF37]' }),
                                     React.createElement('span', null, product.rating)
                                 )
                             )
@@ -925,7 +969,7 @@
                     return React.createElement(
                         'div',
                         { className: 'min-h-screen flex items-center justify-center' },
-                        React.createElement('div', { className: 'heritage-spinner' })
+                        React.createElement('div', { className: 'quantum-spinner' })
                     );
                 }
 
@@ -936,9 +980,9 @@
                         React.createElement(
                             'div',
                             { className: 'text-center' },
-                            React.createElement('i', { className: 'fa-solid fa-circle-exclamation text-4xl text-gray-300 mb-4' }),
-                            React.createElement('h2', { className: 'text-2xl font-bold text-gray-800 mb-4' }, 'Product not found'),
-                            React.createElement('a', { href: '#/shop', className: 'btn-primary' }, 'Back to shop')
+                            React.createElement('i', { className: 'fa-solid fa-circle-exclamation text-4xl text-gray-600 mb-4' }),
+                            React.createElement('h2', { className: 'text-2xl font-bold text-white mb-4' }, 'Product not found'),
+                            React.createElement('a', { href: '#/shop', className: 'btn-2050' }, 'Back to shop')
                         )
                     );
                 }
@@ -956,20 +1000,20 @@
                         { className: 'container mx-auto px-4 max-w-6xl' },
                         React.createElement(
                             'a',
-                            { href: '#/shop', className: 'inline-flex items-center gap-2 text-gray-500 hover:text-primary-red mb-8 transition' },
+                            { href: '#/shop', className: 'inline-flex items-center gap-2 text-gray-400 hover:text-[#ff4d6d] mb-8 transition quantum-ripple' },
                             React.createElement('i', { className: 'fa-solid fa-arrow-left' }),
                             'Back to shop'
                         ),
                         React.createElement(
                             'div',
-                            { className: 'heritage-card p-8' },
+                            { className: 'holo-card p-8' },
                             React.createElement(
                                 'div',
                                 { className: 'grid md:grid-cols-2 gap-12' },
                                 React.createElement(
                                     'div',
                                     null,
-                                    React.createElement('img', { src: product.image, alt: product.name, className: 'rounded-2xl w-full' })
+                                    React.createElement('img', { src: product.image, alt: product.name, className: 'rounded-2xl w-full border border-[#C41E3A]/20' })
                                 ),
                                 React.createElement(
                                     'div',
@@ -977,23 +1021,23 @@
                                     React.createElement(
                                         'div',
                                         { className: 'flex items-center gap-3 mb-4' },
-                                        React.createElement('span', { className: 'text-sm bg-gray-100 px-3 py-1 rounded-full text-gray-600' }, product.category),
-                                        product.featured && React.createElement('span', { className: 'text-sm bg-gold px-3 py-1 rounded-full text-gray-800 font-semibold' }, 'Heritage')
+                                        React.createElement('span', { className: 'text-sm bg-[#1a1a24] border border-white/10 px-3 py-1 rounded-full text-gray-300' }, product.category),
+                                        product.featured && React.createElement('span', { className: 'text-sm bg-gradient-to-r from-[#C41E3A] to-[#ff4d6d] px-3 py-1 rounded-full text-white' }, '2050')
                                     ),
-                                    React.createElement('h1', { className: 'text-3xl font-bold text-gray-800 mb-4' }, product.name),
-                                    React.createElement('p', { className: 'text-gray-600 mb-6 leading-relaxed' }, product.description),
+                                    React.createElement('h1', { className: 'text-3xl font-bold text-white mb-4' }, product.name),
+                                    React.createElement('p', { className: 'text-gray-300 mb-6 leading-relaxed' }, product.description),
                                     
                                     React.createElement(
                                         'div',
                                         { className: 'mb-6' },
-                                        React.createElement('h3', { className: 'font-semibold text-gray-800 mb-3' }, 'Features'),
+                                        React.createElement('h3', { className: 'font-semibold text-white mb-3' }, 'Quantum Specs'),
                                         React.createElement(
                                             'ul',
                                             { className: 'space-y-2' },
                                             product.details.map((detail, i) => React.createElement(
                                                 'li',
-                                                { key: i, className: 'flex items-center gap-2 text-sm text-gray-600' },
-                                                React.createElement('i', { className: 'fa-solid fa-circle-check text-gold text-xs' }),
+                                                { key: i, className: 'flex items-center gap-2 text-sm text-gray-300' },
+                                                React.createElement('i', { className: 'fa-solid fa-circle-check text-[#ff4d6d] text-xs' }),
                                                 detail
                                             ))
                                         )
@@ -1002,26 +1046,26 @@
                                     React.createElement(
                                         'div',
                                         { className: 'mb-6' },
-                                        React.createElement('span', { className: 'text-sm text-gray-500' }, 'Stock: ', 
-                                            React.createElement('span', { className: product.stock > 20 ? 'text-green-600' : 'text-orange-600' }, `${product.stock} available`)
+                                        React.createElement('span', { className: 'text-sm text-gray-400' }, 'Quantum Stock: ', 
+                                            React.createElement('span', { className: product.stock > 20 ? 'text-green-400' : 'text-orange-400' }, `${product.stock} units`)
                                         )
                                     ),
 
-                                    React.createElement('div', { className: 'price-heritage text-3xl mb-6' }, `R ${product.price}`),
+                                    React.createElement('div', { className: 'price-quantum text-3xl mb-6' }, `R ${product.price}`),
 
                                     React.createElement(
                                         'div',
                                         { className: 'flex items-center gap-4 mb-8' },
                                         React.createElement(
                                             'div',
-                                            { className: 'heritage-quantity' },
+                                            { className: 'quantum-quantity' },
                                             React.createElement('button', { onClick: () => setQuantity(Math.max(1, quantity - 1)) }, '-'),
                                             React.createElement('input', { type: 'text', value: quantity, readOnly: true }),
                                             React.createElement('button', { onClick: () => setQuantity(quantity + 1) }, '+')
                                         ),
                                         React.createElement(
                                             'button',
-                                            { onClick: handleAddToCart, className: 'btn-primary flex-1' },
+                                            { onClick: handleAddToCart, className: 'btn-2050 flex-1' },
                                             React.createElement('i', { className: 'fa-solid fa-cart-shopping mr-2' }),
                                             'Add to Cart'
                                         )
@@ -1033,15 +1077,24 @@
                 );
             };
 
-            // ==================== HEADER ====================
+            // ==================== PERSONALIZED HEADER ====================
             const Header = () => {
                 const { user, logout } = useAuth();
                 const { getCount } = useCart();
                 const [menuOpen, setMenuOpen] = React.useState(false);
+                const [scrolled, setScrolled] = React.useState(false);
+
+                React.useEffect(() => {
+                    const handleScroll = () => {
+                        setScrolled(window.scrollY > 50);
+                    };
+                    window.addEventListener('scroll', handleScroll);
+                    return () => window.removeEventListener('scroll', handleScroll);
+                }, []);
 
                 return React.createElement(
                     'header',
-                    { className: 'heritage-glass sticky top-0 z-40 border-b border-primary-red/10' },
+                    { className: `quantum-header sticky top-0 z-40 ${scrolled ? 'scrolled' : ''}` },
                     React.createElement(
                         'div',
                         { className: 'container mx-auto px-4' },
@@ -1049,50 +1102,66 @@
                             'div',
                             { className: 'flex items-center justify-between h-16' },
                             React.createElement(Logo, null),
+                            
+                            // Nomathemba name in header (always visible)
+                            user && React.createElement(
+                                'div',
+                                { className: 'hidden md:flex items-center gap-2' },
+                                React.createElement('span', { className: 'text-gray-400' }, '✦'),
+                                React.createElement('span', { className: 'text-white font-medium' }, 'Nomathemba'),
+                                React.createElement('span', { className: 'text-gray-400' }, '✦'),
+                                React.createElement('span', { className: 'text-xs text-gray-500 ml-2' }, user.loginTime)
+                            ),
+
                             React.createElement(
                                 'nav',
                                 { className: 'hidden md:flex items-center gap-8' },
-                                React.createElement('a', { href: '#/', className: 'text-gray-600 hover:text-primary-red transition font-medium' }, 'Home'),
-                                React.createElement('a', { href: '#/shop', className: 'text-gray-600 hover:text-primary-red transition font-medium' }, 'Shop'),
+                                React.createElement('a', { href: '#/', className: 'text-gray-300 hover:text-[#ff4d6d] transition font-medium quantum-ripple' }, 'Home'),
+                                React.createElement('a', { href: '#/shop', className: 'text-gray-300 hover:text-[#ff4d6d] transition font-medium quantum-ripple' }, 'Shop'),
                                 React.createElement(
                                     'a',
-                                    { href: '#/cart', className: 'relative text-gray-600 hover:text-primary-red transition' },
+                                    { href: '#/cart', className: 'relative text-gray-300 hover:text-[#ff4d6d] transition' },
                                     React.createElement('i', { className: 'fa-solid fa-cart-shopping text-lg' }),
-                                    getCount() > 0 && React.createElement('span', { className: 'heritage-badge' }, getCount())
+                                    getCount() > 0 && React.createElement('span', { className: 'absolute -top-2 -right-2 bg-gradient-to-r from-[#C41E3A] to-[#ff4d6d] text-white text-xs w-5 h-5 rounded-full flex items-center justify-center' }, getCount())
+                                ),
+                                React.createElement(
+                                    'button',
+                                    { onClick: logout, className: 'text-sm text-gray-400 hover:text-[#ff4d6d] transition quantum-ripple' },
+                                    'Exit'
                                 )
-                            ),
-                            React.createElement(
-                                'div',
-                                { className: 'flex items-center gap-4' },
-                                user ? React.createElement(
-                                    'div',
-                                    { className: 'relative' },
-                                    React.createElement(
-                                        'button',
-                                        { onClick: () => setMenuOpen(!menuOpen), className: 'flex items-center gap-2 text-sm font-medium text-gray-700' },
-                                        React.createElement('div', { className: 'w-8 h-8 bg-primary-red rounded-full flex items-center justify-center text-white text-xs' }, user.firstName?.[0] || 'U'),
-                                        React.createElement('span', null, user.firstName || user.email),
-                                        React.createElement('i', { className: 'fa-solid fa-chevron-down text-xs text-gray-400' })
-                                    ),
-                                    menuOpen && React.createElement(
-                                        'div',
-                                        { className: 'absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border py-1' },
-                                        user.roles?.includes('ROLE_ADMIN') && React.createElement(
-                                            'a',
-                                            { href: '#/admin', className: 'block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50' },
-                                            'Dashboard'
-                                        ),
-                                        React.createElement(
-                                            'button',
-                                            { onClick: logout, className: 'block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-50' },
-                                            'Sign out'
-                                        )
-                                    )
-                                ) : React.createElement(
-                                    'a',
-                                    { href: '#/login', className: 'btn-primary text-sm py-2 px-4' },
-                                    'Sign in'
-                                )
+                            )
+                        )
+                    )
+                );
+            };
+
+            // ==================== WELCOME BANNER ====================
+            const WelcomeBanner = ({ user }) => {
+                const [visible, setVisible] = React.useState(true);
+                
+                if (!visible) return null;
+                
+                return React.createElement(
+                    'div',
+                    { className: 'holo-card p-6 mb-8 relative overflow-hidden' },
+                    React.createElement('button', {
+                        onClick: () => setVisible(false),
+                        className: 'absolute top-4 right-4 text-gray-400 hover:text-white transition'
+                    }, '✕'),
+                    React.createElement(
+                        'div',
+                        { className: 'flex items-center gap-4' },
+                        React.createElement(
+                            'div',
+                            { className: 'w-16 h-16 bg-gradient-to-r from-[#C41E3A] to-[#ff4d6d] rounded-full flex items-center justify-center text-white text-2xl font-bold float' },
+                            '✨'
+                        ),
+                        React.createElement(
+                            'div',
+                            null,
+                            React.createElement('h2', { className: 'text-2xl font-bold text-white mb-1' }, 'Welcome, Nomathemba'),
+                            React.createElement('p', { className: 'text-gray-300' },
+                                `Signed in at ${user.loginTime} · Your private preview is now active. Enjoy your visit.`
                             )
                         )
                     )
@@ -1101,6 +1170,7 @@
 
             // ==================== HOME PAGE ====================
             const Home = () => {
+                const { user } = useAuth();
                 const [search, setSearch] = React.useState('');
                 const [selectedCategory, setSelectedCategory] = React.useState('All');
 
@@ -1109,25 +1179,47 @@
                     (search === '' || p.name.toLowerCase().includes(search.toLowerCase()) || p.description.toLowerCase().includes(search.toLowerCase()))
                 ).slice(0, 8);
 
+                // If no user, show pre-login page
+                if (!user) {
+                    return React.createElement(PreLoginPage, null);
+                }
+
                 return React.createElement(
                     'div',
-                    { className: 'heritage-bg min-h-screen' },
+                    { className: 'min-h-screen' },
                     React.createElement(
                         'div',
                         { className: 'container mx-auto px-4 py-8' },
                         
-                        // Welcome section
+                        // Welcome banner (shows once)
+                        React.createElement(WelcomeBanner, { user: user }),
+
+                        // Slider
                         React.createElement(
                             'div',
-                            { className: 'heritage-card p-8 mb-8 text-center' },
-                            React.createElement('h1', { className: 'text-4xl md:text-5xl font-bold mb-4 text-gray-800' }, 'Support the Mission'),
-                            React.createElement('p', { className: 'text-xl text-gray-600 max-w-2xl mx-auto' },
-                                'Every purchase funds youth development programs across South Africa.'
+                            { className: 'quantum-slider mb-12' },
+                            React.createElement(
+                                'div',
+                                { className: 'slider-track' },
+                                products.filter(p => p.featured).slice(0, 4).map((product, index) => React.createElement(
+                                    'div',
+                                    { key: index, className: 'slide' },
+                                    React.createElement('img', { src: product.image, className: 'absolute inset-0 w-full h-full object-cover' }),
+                                    React.createElement(
+                                        'div',
+                                        { className: 'absolute inset-0 bg-gradient-to-r from-black/80 to-transparent' }
+                                    ),
+                                    React.createElement(
+                                        'div',
+                                        { className: 'absolute bottom-12 left-12 z-10' },
+                                        React.createElement('span', { className: 'text-sm text-[#ff4d6d] mb-2 block' }, '2050 COLLECTION'),
+                                        React.createElement('h2', { className: 'text-4xl font-bold text-white mb-2' }, product.name),
+                                        React.createElement('p', { className: 'text-gray-300 mb-4 max-w-md' }, product.description),
+                                        React.createElement('a', { href: `#/product/${product.id}`, className: 'btn-2050' }, 'Explore')
+                                    )
+                                ))
                             )
                         ),
-
-                        // Auto-sliding showcase
-                        React.createElement(SlidingShowcase, null),
 
                         // Search and categories
                         React.createElement(
@@ -1139,10 +1231,10 @@
                                 React.createElement('i', { className: 'fa-solid fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400' }),
                                 React.createElement('input', {
                                     type: 'text',
-                                    placeholder: 'Search products...',
+                                    placeholder: 'Search the future...',
                                     value: search,
                                     onChange: e => setSearch(e.target.value),
-                                    className: 'w-full border border-gray-200 rounded-xl pl-12 pr-4 py-3 text-gray-800 focus:outline-none focus:border-primary-red'
+                                    className: 'w-full quantum-glass border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white focus:outline-none focus:border-[#C41E3A] transition'
                                 })
                             ),
                             React.createElement(
@@ -1153,52 +1245,18 @@
                                     {
                                         key: cat,
                                         onClick: () => setSelectedCategory(cat),
-                                        className: `heritage-chip px-4 py-2 rounded-full text-sm transition ${selectedCategory === cat ? 'active' : ''}`
+                                        className: `chip-2050 ${selectedCategory === cat ? 'active' : ''}`
                                     },
                                     cat
                                 ))
                             )
                         ),
 
-                        // Featured products
+                        // Products
                         React.createElement(
                             'div',
-                            null,
-                            React.createElement(
-                                'div',
-                                { className: 'flex justify-between items-center mb-6' },
-                                React.createElement('h2', { className: 'text-2xl font-bold text-gray-800' }, 'Heritage Collection'),
-                                React.createElement('a', { href: '#/shop', className: 'text-primary-red hover:underline' }, 'View all →')
-                            ),
-                            React.createElement(
-                                'div',
-                                { className: 'grid md:grid-cols-2 lg:grid-cols-4 gap-6' },
-                                filtered.map(p => React.createElement(ProductCard, { key: p.id, product: p }))
-                            )
-                        ),
-
-                        // Stats section
-                        React.createElement(
-                            'div',
-                            { className: 'grid md:grid-cols-3 gap-6 my-12' },
-                            React.createElement(
-                                'div',
-                                { className: 'heritage-card p-6 text-center' },
-                                React.createElement('div', { className: 'text-3xl font-bold text-primary-red mb-2' }, '15,000+'),
-                                React.createElement('p', { className: 'text-gray-600' }, 'Youth Empowered')
-                            ),
-                            React.createElement(
-                                'div',
-                                { className: 'heritage-card p-6 text-center' },
-                                React.createElement('div', { className: 'text-3xl font-bold text-primary-red mb-2' }, '50+'),
-                                React.createElement('p', { className: 'text-gray-600' }, 'Communities Served')
-                            ),
-                            React.createElement(
-                                'div',
-                                { className: 'heritage-card p-6 text-center' },
-                                React.createElement('div', { className: 'text-3xl font-bold text-primary-red mb-2' }, '85%'),
-                                React.createElement('p', { className: 'text-gray-600' }, 'Success Rate')
-                            )
+                            { className: 'grid md:grid-cols-2 lg:grid-cols-4 gap-6' },
+                            filtered.map(p => React.createElement(ProductCard, { key: p.id, product: p }))
                         )
                     )
                 );
@@ -1206,8 +1264,14 @@
 
             // ==================== SHOP PAGE ====================
             const Shop = () => {
+                const { user } = useAuth();
                 const [search, setSearch] = React.useState('');
                 const [selectedCategory, setSelectedCategory] = React.useState('All');
+
+                if (!user) {
+                    window.location.hash = '#/';
+                    return null;
+                }
 
                 const filtered = products.filter(p => 
                     (selectedCategory === 'All' || p.category === selectedCategory) &&
@@ -1216,13 +1280,12 @@
 
                 return React.createElement(
                     'div',
-                    { className: 'heritage-bg min-h-screen py-12' },
+                    { className: 'min-h-screen py-12' },
                     React.createElement(
                         'div',
                         { className: 'container mx-auto px-4' },
-                        React.createElement('h1', { className: 'text-3xl font-bold text-gray-800 mb-8' }, 'All Products'),
+                        React.createElement('h1', { className: 'text-3xl font-bold text-white mb-8' }, '2050 Collection'),
                         
-                        // Search and filters
                         React.createElement(
                             'div',
                             { className: 'mb-8 space-y-4' },
@@ -1232,10 +1295,10 @@
                                 React.createElement('i', { className: 'fa-solid fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400' }),
                                 React.createElement('input', {
                                     type: 'text',
-                                    placeholder: 'Search products...',
+                                    placeholder: 'Search...',
                                     value: search,
                                     onChange: e => setSearch(e.target.value),
-                                    className: 'w-full border border-gray-200 rounded-xl pl-12 pr-4 py-3 text-gray-800 focus:outline-none focus:border-primary-red'
+                                    className: 'w-full quantum-glass border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white focus:outline-none focus:border-[#C41E3A]'
                                 })
                             ),
                             React.createElement(
@@ -1246,25 +1309,18 @@
                                     {
                                         key: cat,
                                         onClick: () => setSelectedCategory(cat),
-                                        className: `heritage-chip px-4 py-2 rounded-full text-sm transition ${selectedCategory === cat ? 'active' : ''}`
+                                        className: `chip-2050 ${selectedCategory === cat ? 'active' : ''}`
                                     },
                                     cat
                                 ))
                             )
                         ),
 
-                        // Results count
-                        React.createElement('p', { className: 'text-sm text-gray-500 mb-6' }, 
-                            `Showing ${filtered.length} product${filtered.length !== 1 ? 's' : ''}`
+                        React.createElement('p', { className: 'text-sm text-gray-400 mb-6' }, 
+                            `Showing ${filtered.length} quantum item${filtered.length !== 1 ? 's' : ''}`
                         ),
 
-                        // Products grid
-                        filtered.length === 0 ? React.createElement(
-                            'div',
-                            { className: 'text-center py-12' },
-                            React.createElement('i', { className: 'fa-solid fa-box-open text-4xl text-gray-300 mb-4' }),
-                            React.createElement('p', { className: 'text-gray-500' }, 'No products found')
-                        ) : React.createElement(
+                        React.createElement(
                             'div',
                             { className: 'grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6' },
                             filtered.map(p => React.createElement(ProductCard, { key: p.id, product: p }))
@@ -1275,63 +1331,67 @@
 
             // ==================== CART PAGE ====================
             const Cart = () => {
-                const { items, removeFromCart, updateQuantity, getTotal } = useCart();
                 const { user } = useAuth();
+                const { items, removeFromCart, updateQuantity, getTotal } = useCart();
+
+                if (!user) {
+                    window.location.hash = '#/';
+                    return null;
+                }
 
                 if (items.length === 0) {
                     return React.createElement(
                         'div',
-                        { className: 'heritage-bg min-h-screen flex items-center justify-center' },
+                        { className: 'min-h-screen flex items-center justify-center' },
                         React.createElement(
                             'div',
                             { className: 'text-center' },
-                            React.createElement('i', { className: 'fa-solid fa-cart-shopping text-5xl text-gray-300 mb-4' }),
-                            React.createElement('h2', { className: 'text-2xl font-bold text-gray-800 mb-4' }, 'Your cart is empty'),
-                            React.createElement('p', { className: 'text-gray-500 mb-8' }, 'Looks like you haven\'t added anything yet.'),
-                            React.createElement('a', { href: '#/shop', className: 'btn-primary' }, 'Browse products')
+                            React.createElement('i', { className: 'fa-solid fa-cart-shopping text-5xl text-gray-600 mb-4' }),
+                            React.createElement('h2', { className: 'text-2xl font-bold text-white mb-4' }, 'Quantum cart is empty'),
+                            React.createElement('a', { href: '#/shop', className: 'btn-2050' }, 'Explore collection')
                         )
                     );
                 }
 
                 return React.createElement(
                     'div',
-                    { className: 'heritage-bg min-h-screen py-12' },
+                    { className: 'min-h-screen py-12' },
                     React.createElement(
                         'div',
                         { className: 'container mx-auto px-4 max-w-4xl' },
-                        React.createElement('h1', { className: 'text-2xl font-bold text-gray-800 mb-8' }, 'Shopping Cart'),
+                        React.createElement('h1', { className: 'text-2xl font-bold text-white mb-8' }, 'Quantum Cart'),
                         
                         React.createElement(
                             'div',
                             { className: 'space-y-4 mb-8' },
-                            items.map((item, index) => React.createElement(
+                            items.map(item => React.createElement(
                                 'div',
-                                { key: item.id, className: 'heritage-card p-6' },
+                                { key: item.id, className: 'holo-card p-6' },
                                 React.createElement(
                                     'div',
                                     { className: 'flex gap-6' },
-                                    React.createElement('img', { src: item.image, className: 'w-24 h-24 object-cover rounded-lg' }),
+                                    React.createElement('img', { src: item.image, className: 'w-24 h-24 object-cover rounded-lg border border-[#C41E3A]/20' }),
                                     React.createElement(
                                         'div',
                                         { className: 'flex-1' },
                                         React.createElement(
                                             'div',
                                             { className: 'flex justify-between mb-2' },
-                                            React.createElement('h3', { className: 'font-semibold text-gray-800' }, item.name),
-                                            React.createElement('span', { className: 'price-heritage' }, `R ${item.price}`)
+                                            React.createElement('h3', { className: 'font-semibold text-white' }, item.name),
+                                            React.createElement('span', { className: 'price-quantum' }, `R ${item.price}`)
                                         ),
-                                        React.createElement('p', { className: 'text-sm text-gray-500 mb-4' }, item.category),
+                                        React.createElement('p', { className: 'text-sm text-gray-400 mb-4' }, item.category),
                                         React.createElement(
                                             'div',
                                             { className: 'flex items-center gap-4' },
                                             React.createElement(
                                                 'div',
-                                                { className: 'heritage-quantity' },
+                                                { className: 'quantum-quantity' },
                                                 React.createElement('button', { onClick: () => updateQuantity(item.id, item.quantity - 1) }, '-'),
                                                 React.createElement('input', { type: 'text', value: item.quantity, readOnly: true }),
                                                 React.createElement('button', { onClick: () => updateQuantity(item.id, item.quantity + 1) }, '+')
                                             ),
-                                            React.createElement('button', { onClick: () => removeFromCart(item.id), className: 'text-sm text-red-600 hover:text-red-700 transition' }, 'Remove')
+                                            React.createElement('button', { onClick: () => removeFromCart(item.id), className: 'text-sm text-[#ff4d6d] hover:text-[#C41E3A] transition quantum-ripple' }, 'Remove')
                                         )
                                     )
                                 )
@@ -1340,94 +1400,24 @@
 
                         React.createElement(
                             'div',
-                            { className: 'heritage-card p-6' },
+                            { className: 'holo-card p-6' },
                             React.createElement(
                                 'div',
                                 { className: 'flex justify-between items-center mb-4' },
-                                React.createElement('span', { className: 'font-semibold text-gray-800' }, 'Subtotal'),
-                                React.createElement('span', { className: 'text-xl price-heritage' }, `R ${getTotal().toFixed(2)}`)
+                                React.createElement('span', { className: 'font-semibold text-white' }, 'Quantum Total'),
+                                React.createElement('span', { className: 'text-xl price-quantum' }, `R ${getTotal().toFixed(2)}`)
                             ),
                             React.createElement(
                                 'div',
-                                { className: 'flex justify-between items-center mb-6 text-sm text-gray-500' },
-                                React.createElement('span', null, 'Shipping'),
+                                { className: 'flex justify-between items-center mb-6 text-sm text-gray-400' },
+                                React.createElement('span', null, 'Quantum Shipping'),
                                 React.createElement('span', null, 'Free')
                             ),
                             React.createElement(
                                 'a',
-                                { href: user ? '#/checkout' : '#/login', className: 'btn-primary w-full text-center block' },
-                                user ? 'Proceed to checkout' : 'Sign in to checkout'
+                                { href: '#/checkout', className: 'btn-2050 w-full text-center block' },
+                                'Initiate Quantum Checkout'
                             )
-                        )
-                    )
-                );
-            };
-
-            // ==================== LOGIN PAGE ====================
-            const Login = () => {
-                const [email, setEmail] = React.useState('');
-                const [password, setPassword] = React.useState('');
-                const [error, setError] = React.useState('');
-                const { login } = useAuth();
-
-                const handleSubmit = async (e) => {
-                    e.preventDefault();
-                    const result = await login(email, password);
-                    if (result.success) {
-                        window.location.hash = '#/';
-                    } else {
-                        setError('Invalid email or password');
-                    }
-                };
-
-                return React.createElement(
-                    'div',
-                    { className: 'heritage-bg min-h-screen flex items-center justify-center py-12' },
-                    React.createElement(
-                        'div',
-                        { className: 'heritage-card p-8 w-full max-w-md' },
-                        React.createElement(
-                            'div',
-                            { className: 'text-center mb-8' },
-                            React.createElement('div', { className: 'w-16 h-16 bg-primary-red rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4' }, 'ATS'),
-                            React.createElement('h2', { className: 'text-2xl font-bold text-gray-800' }, 'Welcome back'),
-                            React.createElement('p', { className: 'text-gray-500 text-sm mt-2' }, 'Sign in to continue shopping')
-                        ),
-                        
-                        error && React.createElement(
-                            'div',
-                            { className: 'bg-red-50 text-red-600 p-3 rounded-lg mb-4 text-sm' },
-                            error
-                        ),
-
-                        React.createElement(
-                            'form',
-                            { onSubmit: handleSubmit },
-                            React.createElement('input', {
-                                type: 'email',
-                                placeholder: 'Email address',
-                                value: email,
-                                onChange: e => setEmail(e.target.value),
-                                className: 'w-full border border-gray-200 rounded-lg px-4 py-3 mb-4 text-gray-800 focus:outline-none focus:border-primary-red',
-                                required: true
-                            }),
-                            React.createElement('input', {
-                                type: 'password',
-                                placeholder: 'Password',
-                                value: password,
-                                onChange: e => setPassword(e.target.value),
-                                className: 'w-full border border-gray-200 rounded-lg px-4 py-3 mb-6 text-gray-800 focus:outline-none focus:border-primary-red',
-                                required: true
-                            }),
-
-                            React.createElement(
-                                'div',
-                                { className: 'bg-gray-50 p-4 rounded-lg mb-6 text-sm' },
-                                React.createElement('p', { className: 'font-medium text-primary-red mb-1' }, 'Demo access:'),
-                                React.createElement('p', { className: 'text-gray-600' }, 'nomathemba@gmail.com / Thembi')
-                            ),
-
-                            React.createElement('button', { type: 'submit', className: 'btn-primary w-full' }, 'Sign in')
                         )
                     )
                 );
@@ -1435,25 +1425,31 @@
 
             // ==================== CHECKOUT PAGE ====================
             const Checkout = () => {
+                const { user } = useAuth();
                 const { items, getTotal } = useCart();
+
+                if (!user) {
+                    window.location.hash = '#/';
+                    return null;
+                }
                 
                 return React.createElement(
                     'div',
-                    { className: 'heritage-bg min-h-screen py-12' },
+                    { className: 'min-h-screen py-12' },
                     React.createElement(
                         'div',
                         { className: 'container mx-auto px-4 max-w-2xl' },
                         React.createElement(
                             'div',
-                            { className: 'heritage-card p-8' },
-                            React.createElement('h1', { className: 'text-2xl font-bold text-gray-800 mb-6' }, 'Checkout'),
+                            { className: 'holo-card p-8' },
+                            React.createElement('h1', { className: 'text-2xl font-bold text-white mb-6' }, 'Quantum Checkout'),
                             
                             React.createElement(
                                 'div',
                                 { className: 'mb-6' },
                                 items.map(item => React.createElement(
                                     'div',
-                                    { key: item.id, className: 'flex justify-between text-sm text-gray-600 mb-2' },
+                                    { key: item.id, className: 'flex justify-between text-sm text-gray-300 mb-2' },
                                     React.createElement('span', null, `${item.name} x${item.quantity}`),
                                     React.createElement('span', null, `R ${(item.price * item.quantity).toFixed(2)}`)
                                 ))
@@ -1461,26 +1457,26 @@
 
                             React.createElement(
                                 'div',
-                                { className: 'border-t border-gray-200 pt-4 mb-6' },
+                                { className: 'border-t border-[#C41E3A]/20 pt-4 mb-6' },
                                 React.createElement(
                                     'div',
                                     { className: 'flex justify-between font-bold text-lg' },
-                                    React.createElement('span', { className: 'text-gray-800' }, 'Total'),
-                                    React.createElement('span', { className: 'price-heritage' }, `R ${getTotal().toFixed(2)}`)
+                                    React.createElement('span', { className: 'text-white' }, 'Total'),
+                                    React.createElement('span', { className: 'price-quantum' }, `R ${getTotal().toFixed(2)}`)
                                 )
                             ),
 
                             React.createElement(
                                 'div',
-                                { className: 'bg-green-50 border border-green-200 rounded-lg p-4 mb-6 text-center' },
-                                React.createElement('p', { className: 'text-green-700 font-medium' }, '✓ Order placed successfully (demo)')
+                                { className: 'bg-[#C41E3A]/20 border border-[#C41E3A]/30 rounded-lg p-4 mb-6 text-center' },
+                                React.createElement('p', { className: 'text-[#ff4d6d] font-medium' }, '✓ Quantum order confirmed (demo)')
                             ),
 
                             React.createElement(
                                 'div',
                                 { className: 'flex gap-4' },
-                                React.createElement('a', { href: '#/cart', className: 'btn-outline flex-1 text-center' }, 'Back'),
-                                React.createElement('a', { href: '#/success', className: 'btn-primary flex-1 text-center' }, 'Continue')
+                                React.createElement('a', { href: '#/cart', className: 'btn-2050 flex-1 text-center' }, 'Back'),
+                                React.createElement('a', { href: '#/success', className: 'btn-2050 flex-1 text-center' }, 'Complete')
                             )
                         )
                     )
@@ -1488,65 +1484,26 @@
             };
 
             // ==================== SUCCESS PAGE ====================
-            const Success = () => React.createElement(
-                'div',
-                { className: 'heritage-bg min-h-screen flex items-center justify-center' },
-                React.createElement(
-                    'div',
-                    { className: 'heritage-card p-8 text-center max-w-md' },
-                    React.createElement('div', { className: 'w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4' },
-                        React.createElement('i', { className: 'fa-solid fa-check text-3xl text-green-600' })
-                    ),
-                    React.createElement('h1', { className: 'text-2xl font-bold text-gray-800 mb-3' }, 'Thank you!'),
-                    React.createElement('p', { className: 'text-gray-500 mb-6' }, 'Your order has been confirmed. You\'ll receive a confirmation email shortly.'),
-                    React.createElement('a', { href: '#/shop', className: 'btn-primary inline-block' }, 'Continue shopping')
-                )
-            );
-
-            // ==================== ADMIN DASHBOARD ====================
-            const AdminDashboard = () => {
+            const Success = () => {
                 const { user } = useAuth();
-                
-                if (!user?.roles?.includes('ROLE_ADMIN')) {
+
+                if (!user) {
                     window.location.hash = '#/';
                     return null;
                 }
 
                 return React.createElement(
                     'div',
-                    { className: 'heritage-bg min-h-screen py-12' },
+                    { className: 'min-h-screen flex items-center justify-center' },
                     React.createElement(
                         'div',
-                        { className: 'container mx-auto px-4' },
-                        React.createElement('h1', { className: 'text-2xl font-bold text-gray-800 mb-8' }, 'Admin Dashboard'),
-                        React.createElement(
-                            'div',
-                            { className: 'grid md:grid-cols-3 gap-6' },
-                            React.createElement(
-                                'div',
-                                { className: 'heritage-card p-6' },
-                                React.createElement('i', { className: 'fa-solid fa-box text-2xl text-primary-red mb-3' }),
-                                React.createElement('h3', { className: 'font-semibold text-gray-800 mb-2' }, 'Products'),
-                                React.createElement('p', { className: 'text-3xl font-bold text-gray-800' }, products.length),
-                                React.createElement('p', { className: 'text-sm text-gray-500 mt-2' }, 'Total items')
-                            ),
-                            React.createElement(
-                                'div',
-                                { className: 'heritage-card p-6' },
-                                React.createElement('i', { className: 'fa-solid fa-users text-2xl text-primary-red mb-3' }),
-                                React.createElement('h3', { className: 'font-semibold text-gray-800 mb-2' }, 'Orders'),
-                                React.createElement('p', { className: 'text-3xl font-bold text-gray-800' }, '247'),
-                                React.createElement('p', { className: 'text-sm text-gray-500 mt-2' }, 'This month')
-                            ),
-                            React.createElement(
-                                'div',
-                                { className: 'heritage-card p-6' },
-                                React.createElement('i', { className: 'fa-solid fa-chart-line text-2xl text-primary-red mb-3' }),
-                                React.createElement('h3', { className: 'font-semibold text-gray-800 mb-2' }, 'Revenue'),
-                                React.createElement('p', { className: 'text-3xl font-bold text-gray-800' }, 'R 82.5k'),
-                                React.createElement('p', { className: 'text-sm text-gray-500 mt-2' }, '+18% vs last month')
-                            )
-                        )
+                        { className: 'holo-card p-8 text-center max-w-md' },
+                        React.createElement('div', { className: 'w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4 float' },
+                            React.createElement('i', { className: 'fa-solid fa-check text-3xl text-white' })
+                        ),
+                        React.createElement('h1', { className: 'text-2xl font-bold text-white mb-3' }, 'Thank you, Nomathemba!'),
+                        React.createElement('p', { className: 'text-gray-400 mb-6' }, 'Your quantum order has been confirmed.'),
+                        React.createElement('a', { href: '#/shop', className: 'btn-2050 inline-block' }, 'Continue exploring')
                     )
                 );
             };
@@ -1554,75 +1511,63 @@
             // ==================== FOOTER ====================
             const Footer = () => React.createElement(
                 'footer',
-                { className: 'heritage-glass border-t border-primary-red/10 mt-20' },
+                { className: 'quantum-glass border-t border-[#C41E3A]/20 mt-20' },
                 React.createElement(
                     'div',
                     { className: 'container mx-auto px-4 py-12' },
                     React.createElement(
                         'div',
                         { className: 'grid md:grid-cols-4 gap-8' },
-                        // About
                         React.createElement(
                             'div',
                             null,
                             React.createElement(Logo, null),
-                            React.createElement('p', { className: 'text-sm text-gray-600 mt-4 leading-relaxed' },
+                            React.createElement('p', { className: 'text-sm text-gray-400 mt-4 leading-relaxed' },
                                 'Developing young people from cradle to career. NPO: 021-892 | PBO: 18/11/13/2470'
                             )
                         ),
-                        // Foundation
                         React.createElement(
                             'div',
                             null,
-                            React.createElement('h4', { className: 'font-bold text-gray-800 mb-4' }, 'FOUNDATION'),
-                            React.createElement('p', { className: 'text-sm text-gray-600 mb-2' }, 'Ground Floor, Eastwood Building'),
-                            React.createElement('p', { className: 'text-sm text-gray-600 mb-2' }, '57 6th Road, Hyde Park'),
-                            React.createElement('p', { className: 'text-sm text-gray-600 mb-4' }, 'South Africa'),
-                            React.createElement('p', { className: 'text-sm text-gray-700' }, React.createElement('i', { className: 'fa-solid fa-phone mr-2 text-primary-red' }), '+27 11 325 5914'),
-                            React.createElement('p', { className: 'text-sm text-gray-700' }, React.createElement('i', { className: 'fa-solid fa-envelope mr-2 text-primary-red' }), 'info@afrikatikkun.org')
+                            React.createElement('h4', { className: 'font-bold text-white mb-4' }, 'FOUNDATION'),
+                            React.createElement('p', { className: 'text-sm text-gray-400 mb-2' }, 'Ground Floor, Eastwood Building'),
+                            React.createElement('p', { className: 'text-sm text-gray-400 mb-2' }, '57 6th Road, Hyde Park'),
+                            React.createElement('p', { className: 'text-sm text-gray-400 mb-4' }, 'South Africa'),
+                            React.createElement('p', { className: 'text-sm text-gray-300' }, React.createElement('i', { className: 'fa-solid fa-phone mr-2 text-[#ff4d6d]' }), '+27 11 325 5914'),
+                            React.createElement('p', { className: 'text-sm text-gray-300' }, React.createElement('i', { className: 'fa-solid fa-envelope mr-2 text-[#ff4d6d]' }), 'info@afrikatikkun.org')
                         ),
-                        // Services
                         React.createElement(
                             'div',
                             null,
-                            React.createElement('h4', { className: 'font-bold text-gray-800 mb-4' }, 'SERVICES'),
-                            React.createElement('p', { className: 'text-sm text-gray-600 mb-2' }, 'Afrika Tikkun Services'),
-                            React.createElement('p', { className: 'text-sm text-gray-600 mb-2' }, '1 Bond Street, Kensington B'),
-                            React.createElement('p', { className: 'text-sm text-gray-600 mb-4' }, 'Randburg, South Africa'),
-                            React.createElement('p', { className: 'text-sm text-gray-700' }, React.createElement('i', { className: 'fa-solid fa-phone mr-2 text-primary-red' }), '+27 11 325 6123'),
-                            React.createElement('p', { className: 'text-sm text-gray-700' }, React.createElement('i', { className: 'fa-solid fa-envelope mr-2 text-primary-red' }), 'info@afrikatikkunservices.com')
+                            React.createElement('h4', { className: 'font-bold text-white mb-4' }, 'SERVICES'),
+                            React.createElement('p', { className: 'text-sm text-gray-400 mb-2' }, 'Afrika Tikkun Services'),
+                            React.createElement('p', { className: 'text-sm text-gray-400 mb-2' }, '1 Bond Street, Kensington B'),
+                            React.createElement('p', { className: 'text-sm text-gray-400 mb-4' }, 'Randburg, South Africa'),
+                            React.createElement('p', { className: 'text-sm text-gray-300' }, React.createElement('i', { className: 'fa-solid fa-phone mr-2 text-[#ff4d6d]' }), '+27 11 325 6123'),
+                            React.createElement('p', { className: 'text-sm text-gray-300' }, React.createElement('i', { className: 'fa-solid fa-envelope mr-2 text-[#ff4d6d]' }), 'info@afrikatikkunservices.com')
                         ),
-                        // Newsletter
                         React.createElement(
                             'div',
                             null,
-                            React.createElement('h4', { className: 'font-bold text-gray-800 mb-4' }, 'NEWSLETTER'),
-                            React.createElement('p', { className: 'text-sm text-gray-600 mb-4' }, 'Subscribe for updates and impact stories.'),
+                            React.createElement('h4', { className: 'font-bold text-white mb-4' }, 'NEWSLETTER'),
+                            React.createElement('p', { className: 'text-sm text-gray-400 mb-4' }, 'Subscribe for quantum updates.'),
                             React.createElement(
                                 'div',
                                 { className: 'flex gap-2' },
                                 React.createElement('input', {
                                     type: 'email',
                                     placeholder: 'Email address',
-                                    className: 'flex-1 border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 focus:outline-none focus:border-primary-red'
+                                    className: 'flex-1 quantum-glass border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#C41E3A]'
                                 }),
-                                React.createElement('button', { className: 'btn-primary text-sm py-2' }, 'Subscribe')
-                            ),
-                            React.createElement(
-                                'div',
-                                { className: 'flex gap-4 mt-6' },
-                                React.createElement('a', { href: '#', className: 'text-gray-500 hover:text-primary-red transition' }, React.createElement('i', { className: 'fab fa-linkedin text-lg' })),
-                                React.createElement('a', { href: '#', className: 'text-gray-500 hover:text-primary-red transition' }, React.createElement('i', { className: 'fab fa-twitter text-lg' })),
-                                React.createElement('a', { href: '#', className: 'text-gray-500 hover:text-primary-red transition' }, React.createElement('i', { className: 'fab fa-instagram text-lg' })),
-                                React.createElement('a', { href: '#', className: 'text-gray-500 hover:text-primary-red transition' }, React.createElement('i', { className: 'fab fa-youtube text-lg' }))
+                                React.createElement('button', { className: 'btn-2050 text-sm py-2' }, 'Subscribe')
                             )
                         )
                     ),
                     React.createElement(
                         'div',
-                        { className: 'border-t border-gray-200 mt-12 pt-8 text-center text-sm text-gray-500' },
+                        { className: 'border-t border-[#C41E3A]/20 mt-12 pt-8 text-center text-sm text-gray-400' },
                         React.createElement('p', null, '© 2026 Afrika Tikkun. All rights reserved.'),
-                        React.createElement('p', { className: 'mt-2' }, 'This project was created by Commercia and supported by FMTALI.')
+                        React.createElement('p', { className: 'mt-2' }, 'Created by Motlwang for Nomathemba · 2050 Experience')
                     )
                 )
             );
@@ -1630,6 +1575,7 @@
             // ==================== MAIN APP ====================
             const App = () => {
                 const [currentPath, setCurrentPath] = React.useState(window.location.hash || '#/');
+                const { user } = useAuth();
 
                 React.useEffect(() => {
                     const handleHashChange = () => setCurrentPath(window.location.hash || '#/');
@@ -1642,7 +1588,6 @@
                     const path = currentPath.split('?')[0];
                     
                     if (path.startsWith('#/product/')) return React.createElement(ProductDetail);
-                    if (path === '#/admin') return React.createElement(AdminDashboard);
                     if (path === '#/shop') return React.createElement(Shop);
                     if (path === '#/cart') return React.createElement(Cart);
                     if (path === '#/checkout') return React.createElement(Checkout);
@@ -1660,11 +1605,11 @@
                         null,
                         React.createElement(
                             'div',
-                            { className: 'heritage-bg min-h-screen' },
-                            React.createElement(Header, null),
+                            { className: 'min-h-screen particle-bg' },
+                            user && React.createElement(Header, null),
                             React.createElement('main', null, renderPage()),
-                            React.createElement(Footer, null),
-                            React.createElement(ChatBot, null)
+                            user && React.createElement(Footer, null),
+                            user && React.createElement(ChatBot, null)
                         )
                     )
                 );
@@ -1676,4 +1621,4 @@
         })();
     </script>
 </body>
-    </html>
+</html>
