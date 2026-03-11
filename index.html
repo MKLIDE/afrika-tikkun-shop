@@ -37,139 +37,6 @@
             --off-white: #faf7f2;
         }
 
-        /* ===== SMOOTH 2050 ADDITIONS ===== */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Ultra-smooth transitions */
-        .heritage-card, .btn-primary, .btn-gold, .btn-outline, .heritage-chip, a {
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        /* Magnetic button effect */
-        .btn-primary:hover, .btn-gold:hover, .btn-outline:hover {
-            transform: scale(1.05) translateY(-3px);
-            box-shadow: 0 20px 30px -10px var(--primary-red);
-        }
-
-        .btn-primary:active, .btn-gold:active, .btn-outline:active {
-            transform: scale(0.98);
-        }
-
-        /* Ripple effect on click */
-        .btn-primary, .btn-gold, .btn-outline {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary::after, .btn-gold::after, .btn-outline::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s, opacity 0.6s;
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .btn-primary:active::after, .btn-gold:active::after, .btn-outline:active::after {
-            width: 300px;
-            height: 300px;
-            opacity: 1;
-        }
-
-        /* Smooth card hover */
-        .heritage-card {
-            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .heritage-card:hover {
-            transform: translateY(-10px) scale(1.02);
-        }
-
-        /* Smooth image zoom */
-        .product-image img {
-            transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .heritage-card:hover .product-image img {
-            transform: scale(1.1);
-        }
-
-        /* Smooth category chips */
-        .heritage-chip {
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .heritage-chip:hover {
-            transform: scale(1.1) translateY(-2px);
-        }
-
-        /* Smooth quick view */
-        .quick-view {
-            transition: bottom 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        /* Smooth quantity buttons */
-        .heritage-quantity button {
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .heritage-quantity button:hover {
-            background: var(--primary-red);
-            color: white;
-            transform: scale(1.1);
-        }
-
-        /* Smooth slider */
-        .slider-track {
-            animation: smoothSlide 25s infinite cubic-bezier(0.45, 0.05, 0.2, 0.99);
-        }
-
-        @keyframes smoothSlide {
-            0%, 20% { transform: translateX(0); }
-            25%, 45% { transform: translateX(-25%); }
-            50%, 70% { transform: translateX(-50%); }
-            75%, 95% { transform: translateX(-75%); }
-            100% { transform: translateX(0); }
-        }
-
-        /* Floating animation for special elements */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
-        }
-
-        .float {
-            animation: float 4s ease-in-out infinite;
-        }
-
-        /* Smooth scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--cream);
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary-red);
-            border-radius: 5px;
-            transition: all 0.3s;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--primary-red-dark);
-        }
-
         /* Glass morphism with original colors */
         .heritage-glass {
             background: rgba(255, 255, 255, 0.9);
@@ -184,6 +51,7 @@
             border: 1px solid rgba(196, 30, 58, 0.15);
             border-radius: 24px;
             box-shadow: 0 10px 30px -10px rgba(196, 30, 58, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
         }
@@ -201,8 +69,9 @@
         }
 
         .heritage-card:hover {
-            border-color: var(--primary-red);
+            transform: translateY(-8px) scale(1.02);
             box-shadow: 0 20px 40px -15px rgba(196, 30, 58, 0.3);
+            border-color: var(--primary-red);
         }
 
         .heritage-card:hover::before {
@@ -258,6 +127,7 @@
             display: flex;
             width: 400%;
             height: 100%;
+            animation: slide 20s infinite cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .slider-track:hover {
@@ -297,6 +167,14 @@
             backdrop-filter: blur(10px);
         }
 
+        @keyframes slide {
+            0%, 20% { transform: translateX(0); }
+            25%, 45% { transform: translateX(-25%); }
+            50%, 70% { transform: translateX(-50%); }
+            75%, 95% { transform: translateX(-75%); }
+            100% { transform: translateX(0); }
+        }
+
         /* Product image styles */
         .product-image {
             position: relative;
@@ -309,6 +187,11 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .heritage-card:hover .product-image img {
+            transform: scale(1.1);
         }
 
         .quick-view {
@@ -319,6 +202,7 @@
             background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
             padding: 16px;
+            transition: bottom 0.3s ease;
             border-top: 1px solid var(--primary-red);
         }
 
@@ -331,6 +215,7 @@
             background: white;
             border: 1px solid rgba(196, 30, 58, 0.2);
             color: var(--charcoal);
+            transition: all 0.3s;
         }
 
         .heritage-chip:hover,
@@ -348,16 +233,18 @@
             padding: 0.75rem 1.5rem;
             border-radius: 12px;
             font-weight: 600;
+            transition: all 0.3s;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
             border: 1px solid var(--primary-red);
-            cursor: pointer;
         }
 
         .btn-primary:hover {
             background: var(--primary-red-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -8px rgba(196, 30, 58, 0.4);
         }
 
         .btn-gold {
@@ -372,6 +259,8 @@
         .btn-gold:hover {
             background: var(--gold-dark);
             color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -8px rgba(212, 175, 55, 0.4);
         }
 
         .btn-outline {
@@ -381,11 +270,13 @@
             padding: 0.75rem 1.5rem;
             border-radius: 12px;
             font-weight: 600;
+            transition: all 0.3s;
         }
 
         .btn-outline:hover {
             background: var(--primary-red);
             color: white;
+            transform: translateY(-2px);
         }
 
         /* Cart badge */
@@ -447,6 +338,12 @@
             border: none;
             color: var(--charcoal);
             cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .heritage-quantity button:hover {
+            background: rgba(196, 30, 58, 0.05);
+            color: var(--primary-red);
         }
 
         .heritage-quantity input {
@@ -508,7 +405,7 @@
     <div id="root"></div>
     <script type="text/babel">
         (function() {
-            // ==================== FIXED PRODUCTS (BROKEN LINKS REPLACED) ====================
+            // ==================== PREMIUM PRODUCTS ====================
             const products = [
                 { 
                     id: 1, 
@@ -560,24 +457,24 @@
                 },
                 { 
                     id: 5, 
-                    name: 'Aether Bag', 
+                    name: 'Royal Bag', 
                     price: 320, 
                     category: 'Bags', 
-                    image: 'https://images.unsplash.com/photo-1547949003-9792a18a2601?w=800', 
-                    description: 'Premium techwear backpack with wireless charging. Aerospace-grade fabric.',
-                    details: ['Wireless charging', 'Aerospace fabric', 'Water-resistant', 'Laptop sleeve', 'RFID protection'],
+                    image: 'https://images.unsplash.com/photo-1622560480654-962b1f48a50d?w=800', 
+                    description: 'Premium drawstring bag with leather bottom and gold hardware.',
+                    details: ['Leather bottom', 'Gold hardware', 'Water-resistant', 'Internal pocket', 'Adjustable straps'],
                     stock: 35,
                     featured: true,
                     rating: 4.8
                 },
                 { 
                     id: 6, 
-                    name: 'Solar Cap', 
+                    name: 'Crest Cap', 
                     price: 200, 
                     category: 'Caps', 
-                    image: 'https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?w=800', 
-                    description: 'Solar-powered cap with UV sensor. Charges devices in emergencies.',
-                    details: ['Solar panel', 'UV sensor', 'Phone charging', 'Adjustable', 'Moisture-wicking'],
+                    image: 'https://images.unsplash.com/photo-1588850567220-85db1e1c816f?w=800', 
+                    description: 'Premium cotton cap with embroidered crest and gold underbill.',
+                    details: ['Embroidered crest', 'Gold underbill', 'Adjustable strap', 'Moisture-wicking', 'Premium cotton'],
                     stock: 40,
                     featured: true,
                     rating: 4.7
@@ -644,14 +541,14 @@
                 },
                 { 
                     id: 12, 
-                    name: 'Orbit Cap', 
+                    name: 'Classic Cap', 
                     price: 220, 
                     category: 'Caps', 
-                    image: 'https://images.unsplash.com/photo-1517941823-815bea90d291?w=800', 
-                    description: 'GPS-enabled cap with heads-up navigation display.',
-                    details: ['GPS navigation', 'Heads-up display', 'Bluetooth', 'Solar assist', 'Premium build'],
+                    image: 'https://images.unsplash.com/photo-1556909190-eccf4a8bf97a?w=800', 
+                    description: 'Classic six-panel with leather strap and gold buckle.',
+                    details: ['Leather strap', 'Gold buckle', 'Embroidered logo', 'UV protection', 'Premium build'],
                     stock: 45,
-                    featured: true,
+                    featured: false,
                     rating: 4.6
                 }
             ];
@@ -680,14 +577,27 @@
                             firstName: 'Nomathemba',
                             lastName: 'Thembi',
                             roles: ['ROLE_ADMIN'],
-                            lastLogin: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+                            lastLogin: new Date().toISOString()
                         };
                         setUser(userData);
                         localStorage.setItem('user', JSON.stringify(userData));
                         return { success: true, user: userData };
                     }
                     
-                    return { success: false, error: 'This demo is exclusively for Nomathemba' };
+                    if (email && password) {
+                        const userData = { 
+                            id: 2, 
+                            email,
+                            firstName: email.split('@')[0],
+                            lastName: 'User',
+                            roles: ['ROLE_USER']
+                        };
+                        setUser(userData);
+                        localStorage.setItem('user', JSON.stringify(userData));
+                        return { success: true, user: userData };
+                    }
+                    
+                    return { success: false, error: 'Invalid credentials' };
                 };
 
                 const logout = () => {
@@ -846,12 +756,10 @@
                     if (lower.includes('hoodie')) response = 'Our Heritage Hoodies range from R450-R480, featuring gold embroidery.';
                     else if (lower.includes('shirt') || lower.includes('tee')) response = 'T-shirts start at R250. The Origin features our gold foil print.';
                     else if (lower.includes('bottle')) response = 'Legacy bottles from R180-R220 with gold accent rings.';
-                    else if (lower.includes('bag')) response = 'Our Aether Bag features wireless charging from R320.';
-                    else if (lower.includes('cap')) response = 'Solar Caps with phone charging start at R200.';
                     else if (lower.includes('shipping')) response = 'Free shipping on all orders. Delivery 3-5 business days.';
                     else if (lower.includes('return')) response = '30-day return policy with full refund guarantee.';
                     else if (lower.includes('mission')) response = '100% of proceeds fund youth development programs across South Africa.';
-                    else if (lower.includes('nomathemba') || lower.includes('thembi')) response = 'Welcome, Nomathemba! Your private preview is active.';
+                    else if (lower.includes('nomathemba') || lower.includes('thembi')) response = 'Welcome, Nomathemba! You have admin access.';
                     else if (lower.includes('hello') || lower.includes('hi')) response = 'Hello! How may I assist you today?';
                     else response = 'I can help with product info, pricing, shipping, and returns. What would you like to know?';
                     
@@ -1141,15 +1049,6 @@
                             'div',
                             { className: 'flex items-center justify-between h-16' },
                             React.createElement(Logo, null),
-                            
-                            // Nomathemba name in header when logged in
-                            user && React.createElement(
-                                'div',
-                                { className: 'hidden md:flex items-center gap-2 bg-primary-red/5 px-3 py-1 rounded-full' },
-                                React.createElement('span', { className: 'text-primary-red text-sm font-medium' }, 'Nomathemba'),
-                                React.createElement('span', { className: 'text-xs text-gray-500' }, user.lastLogin)
-                            ),
-
                             React.createElement(
                                 'nav',
                                 { className: 'hidden md:flex items-center gap-8' },
@@ -1171,8 +1070,8 @@
                                     React.createElement(
                                         'button',
                                         { onClick: () => setMenuOpen(!menuOpen), className: 'flex items-center gap-2 text-sm font-medium text-gray-700' },
-                                        React.createElement('div', { className: 'w-8 h-8 bg-primary-red rounded-full flex items-center justify-center text-white text-xs' }, 'N'),
-                                        React.createElement('span', null, 'Nomathemba'),
+                                        React.createElement('div', { className: 'w-8 h-8 bg-primary-red rounded-full flex items-center justify-center text-white text-xs' }, user.firstName?.[0] || 'U'),
+                                        React.createElement('span', null, user.firstName || user.email),
                                         React.createElement('i', { className: 'fa-solid fa-chevron-down text-xs text-gray-400' })
                                     ),
                                     menuOpen && React.createElement(
@@ -1200,53 +1099,10 @@
                 );
             };
 
-            // ==================== WELCOME BANNER ====================
-            const WelcomeBanner = ({ user }) => {
-                const [visible, setVisible] = React.useState(true);
-                
-                if (!visible || !user) return null;
-                
-                return React.createElement(
-                    'div',
-                    { className: 'heritage-card p-6 mb-8 relative overflow-hidden float' },
-                    React.createElement('button', {
-                        onClick: () => setVisible(false),
-                        className: 'absolute top-4 right-4 text-gray-400 hover:text-primary-red transition'
-                    }, '✕'),
-                    React.createElement(
-                        'div',
-                        { className: 'flex items-center gap-4' },
-                        React.createElement(
-                            'div',
-                            { className: 'w-12 h-12 bg-primary-red rounded-full flex items-center justify-center text-white text-xl font-bold' },
-                            '✨'
-                        ),
-                        React.createElement(
-                            'div',
-                            null,
-                            React.createElement('h2', { className: 'text-xl font-bold text-gray-800 mb-1' }, 'Welcome, Nomathemba'),
-                            React.createElement('p', { className: 'text-gray-600' },
-                                `Signed in at ${user.lastLogin} · Your private preview is now active. Enjoy your visit.`
-                            )
-                        )
-                    )
-                );
-            };
-
             // ==================== HOME PAGE ====================
             const Home = () => {
-                const { user } = useAuth();
                 const [search, setSearch] = React.useState('');
                 const [selectedCategory, setSelectedCategory] = React.useState('All');
-
-                // If no user, redirect to login
-                React.useEffect(() => {
-                    if (!user) {
-                        window.location.hash = '#/login';
-                    }
-                }, [user]);
-
-                if (!user) return null;
 
                 const filtered = products.filter(p => 
                     (selectedCategory === 'All' || p.category === selectedCategory) &&
@@ -1260,9 +1116,6 @@
                         'div',
                         { className: 'container mx-auto px-4 py-8' },
                         
-                        // Welcome banner
-                        React.createElement(WelcomeBanner, { user: user }),
-
                         // Welcome section
                         React.createElement(
                             'div',
@@ -1353,14 +1206,8 @@
 
             // ==================== SHOP PAGE ====================
             const Shop = () => {
-                const { user } = useAuth();
                 const [search, setSearch] = React.useState('');
                 const [selectedCategory, setSelectedCategory] = React.useState('All');
-
-                if (!user) {
-                    window.location.hash = '#/login';
-                    return null;
-                }
 
                 const filtered = products.filter(p => 
                     (selectedCategory === 'All' || p.category === selectedCategory) &&
@@ -1428,13 +1275,8 @@
 
             // ==================== CART PAGE ====================
             const Cart = () => {
-                const { user } = useAuth();
                 const { items, removeFromCart, updateQuantity, getTotal } = useCart();
-
-                if (!user) {
-                    window.location.hash = '#/login';
-                    return null;
-                }
+                const { user } = useAuth();
 
                 if (items.length === 0) {
                     return React.createElement(
@@ -1513,8 +1355,8 @@
                             ),
                             React.createElement(
                                 'a',
-                                { href: '#/checkout', className: 'btn-primary w-full text-center block' },
-                                'Proceed to checkout'
+                                { href: user ? '#/checkout' : '#/login', className: 'btn-primary w-full text-center block' },
+                                user ? 'Proceed to checkout' : 'Sign in to checkout'
                             )
                         )
                     )
@@ -1534,7 +1376,7 @@
                     if (result.success) {
                         window.location.hash = '#/';
                     } else {
-                        setError(result.error);
+                        setError('Invalid email or password');
                     }
                 };
 
@@ -1548,22 +1390,14 @@
                             'div',
                             { className: 'text-center mb-8' },
                             React.createElement('div', { className: 'w-16 h-16 bg-primary-red rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4' }, 'ATS'),
-                            React.createElement('h2', { className: 'text-2xl font-bold text-gray-800' }, 'FROM MOTLWANG'),
-                            React.createElement('p', { className: 'text-gray-500 text-sm mt-2' }, 'This private demo has been prepared for you.')
+                            React.createElement('h2', { className: 'text-2xl font-bold text-gray-800' }, 'Welcome back'),
+                            React.createElement('p', { className: 'text-gray-500 text-sm mt-2' }, 'Sign in to continue shopping')
                         ),
                         
                         error && React.createElement(
                             'div',
                             { className: 'bg-red-50 text-red-600 p-3 rounded-lg mb-4 text-sm' },
                             error
-                        ),
-
-                        React.createElement(
-                            'div',
-                            { className: 'bg-gray-50 p-4 rounded-lg mb-6 text-center' },
-                            React.createElement('p', { className: 'text-sm text-gray-600 mb-2' }, 'Sign in with your credentials:'),
-                            React.createElement('p', { className: 'font-mono text-primary-red font-medium' }, 'nomathemba@gmail.com'),
-                            React.createElement('p', { className: 'font-mono text-primary-red font-medium' }, 'Thembi')
                         ),
 
                         React.createElement(
@@ -1586,6 +1420,13 @@
                                 required: true
                             }),
 
+                            React.createElement(
+                                'div',
+                                { className: 'bg-gray-50 p-4 rounded-lg mb-6 text-sm' },
+                                React.createElement('p', { className: 'font-medium text-primary-red mb-1' }, 'Demo access:'),
+                                React.createElement('p', { className: 'text-gray-600' }, 'nomathemba@gmail.com / Thembi')
+                            ),
+
                             React.createElement('button', { type: 'submit', className: 'btn-primary w-full' }, 'Sign in')
                         )
                     )
@@ -1594,13 +1435,7 @@
 
             // ==================== CHECKOUT PAGE ====================
             const Checkout = () => {
-                const { user } = useAuth();
                 const { items, getTotal } = useCart();
-
-                if (!user) {
-                    window.location.hash = '#/login';
-                    return null;
-                }
                 
                 return React.createElement(
                     'div',
@@ -1653,29 +1488,20 @@
             };
 
             // ==================== SUCCESS PAGE ====================
-            const Success = () => {
-                const { user } = useAuth();
-
-                if (!user) {
-                    window.location.hash = '#/login';
-                    return null;
-                }
-
-                return React.createElement(
+            const Success = () => React.createElement(
+                'div',
+                { className: 'heritage-bg min-h-screen flex items-center justify-center' },
+                React.createElement(
                     'div',
-                    { className: 'heritage-bg min-h-screen flex items-center justify-center' },
-                    React.createElement(
-                        'div',
-                        { className: 'heritage-card p-8 text-center max-w-md' },
-                        React.createElement('div', { className: 'w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4' },
-                            React.createElement('i', { className: 'fa-solid fa-check text-3xl text-green-600' })
-                        ),
-                        React.createElement('h1', { className: 'text-2xl font-bold text-gray-800 mb-3' }, 'Thank you, Nomathemba!'),
-                        React.createElement('p', { className: 'text-gray-500 mb-6' }, 'Your order has been confirmed.'),
-                        React.createElement('a', { href: '#/shop', className: 'btn-primary inline-block' }, 'Continue shopping')
-                    )
-                );
-            };
+                    { className: 'heritage-card p-8 text-center max-w-md' },
+                    React.createElement('div', { className: 'w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4' },
+                        React.createElement('i', { className: 'fa-solid fa-check text-3xl text-green-600' })
+                    ),
+                    React.createElement('h1', { className: 'text-2xl font-bold text-gray-800 mb-3' }, 'Thank you!'),
+                    React.createElement('p', { className: 'text-gray-500 mb-6' }, 'Your order has been confirmed. You\'ll receive a confirmation email shortly.'),
+                    React.createElement('a', { href: '#/shop', className: 'btn-primary inline-block' }, 'Continue shopping')
+                )
+            );
 
             // ==================== ADMIN DASHBOARD ====================
             const AdminDashboard = () => {
@@ -1796,7 +1622,7 @@
                         'div',
                         { className: 'border-t border-gray-200 mt-12 pt-8 text-center text-sm text-gray-500' },
                         React.createElement('p', null, '© 2026 Afrika Tikkun. All rights reserved.'),
-                        React.createElement('p', { className: 'mt-2' }, 'Created by Motlwang for Nomathemba')
+                        React.createElement('p', { className: 'mt-2' }, 'This project was created by Commercia and supported by FMTALI.')
                     )
                 )
             );
@@ -1804,7 +1630,6 @@
             // ==================== MAIN APP ====================
             const App = () => {
                 const [currentPath, setCurrentPath] = React.useState(window.location.hash || '#/');
-                const { user } = useAuth();
 
                 React.useEffect(() => {
                     const handleHashChange = () => setCurrentPath(window.location.hash || '#/');
@@ -1836,10 +1661,10 @@
                         React.createElement(
                             'div',
                             { className: 'heritage-bg min-h-screen' },
-                            user && React.createElement(Header, null),
+                            React.createElement(Header, null),
                             React.createElement('main', null, renderPage()),
-                            user && React.createElement(Footer, null),
-                            user && React.createElement(ChatBot, null)
+                            React.createElement(Footer, null),
+                            React.createElement(ChatBot, null)
                         )
                     )
                 );
@@ -1851,4 +1676,4 @@
         })();
     </script>
 </body>
-    </html>
+</html>
