@@ -37,140 +37,6 @@
             --off-white: #faf7f2;
         }
 
-        /* ===== SMOOTH 2055 ADDITIONS ===== */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Ultra-smooth transitions */
-        .heritage-card, .btn-primary, .btn-gold, .btn-outline, .heritage-chip, a, .product-image img, .quick-view {
-            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
-        }
-
-        /* Magnetic button effect */
-        .btn-primary:hover, .btn-gold:hover, .btn-outline:hover {
-            transform: scale(1.08) translateY(-4px) !important;
-            box-shadow: 0 25px 35px -12px var(--primary-red) !important;
-        }
-
-        .btn-primary:active, .btn-gold:active, .btn-outline:active {
-            transform: scale(0.96) !important;
-        }
-
-        /* Ripple effect on click */
-        .btn-primary, .btn-gold, .btn-outline, .heritage-chip {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary::after, .btn-gold::after, .btn-outline::after, .heritage-chip::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.7);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s, opacity 0.6s;
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .btn-primary:active::after, .btn-gold:active::after, .btn-outline:active::after, .heritage-chip:active::after {
-            width: 400px;
-            height: 400px;
-            opacity: 1;
-        }
-
-        /* Enhanced card hover */
-        .heritage-card:hover {
-            transform: translateY(-15px) scale(1.04) !important;
-            box-shadow: 0 30px 45px -15px var(--primary-red) !important;
-        }
-
-        /* Enhanced image zoom */
-        .heritage-card:hover .product-image img {
-            transform: scale(1.18) !important;
-        }
-
-        /* Enhanced category chips */
-        .heritage-chip:hover {
-            transform: scale(1.15) translateY(-3px) !important;
-            box-shadow: 0 12px 25px -8px var(--primary-red) !important;
-        }
-
-        /* Enhanced quick view */
-        .quick-view {
-            transition: bottom 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
-        }
-
-        /* Enhanced quantity buttons */
-        .heritage-quantity button {
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
-        }
-
-        .heritage-quantity button:hover {
-            background: var(--primary-red) !important;
-            color: white !important;
-            transform: scale(1.15) !important;
-        }
-
-        /* Quantum slider */
-        .slider-track {
-            animation: quantumSlide 25s infinite cubic-bezier(0.45, 0.05, 0.2, 0.99) !important;
-        }
-
-        @keyframes quantumSlide {
-            0%, 18% { transform: translateX(0); }
-            22%, 40% { transform: translateX(-25%); }
-            44%, 62% { transform: translateX(-50%); }
-            66%, 84% { transform: translateX(-75%); }
-            88%, 100% { transform: translateX(0); }
-        }
-
-        /* Floating animation for welcome banner */
-        @keyframes gentleFloat {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-        }
-
-        .float-banner {
-            animation: gentleFloat 4s ease-in-out infinite;
-        }
-
-        /* Glass morphism enhancement */
-        .heritage-glass {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(15px) saturate(180%);
-            -webkit-backdrop-filter: blur(15px) saturate(180%);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 8px 32px rgba(196, 30, 58, 0.15);
-        }
-
-        /* Smooth scrollbar */
-        ::-webkit-scrollbar {
-            width: 12px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--cream);
-            border-radius: 6px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, var(--primary-red), var(--gold));
-            border-radius: 6px;
-            transition: all 0.3s;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(135deg, var(--gold), var(--primary-red));
-            transform: scale(1.1);
-        }
-        /* ===== END OF 2055 ADDITIONS ===== */
-
         /* Glass morphism with original colors */
         .heritage-glass {
             background: rgba(255, 255, 255, 0.9);
@@ -185,6 +51,7 @@
             border: 1px solid rgba(196, 30, 58, 0.15);
             border-radius: 24px;
             box-shadow: 0 10px 30px -10px rgba(196, 30, 58, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
         }
@@ -202,6 +69,8 @@
         }
 
         .heritage-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px -15px rgba(196, 30, 58, 0.3);
             border-color: var(--primary-red);
         }
 
@@ -258,6 +127,7 @@
             display: flex;
             width: 400%;
             height: 100%;
+            animation: slide 20s infinite cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .slider-track:hover {
@@ -297,6 +167,14 @@
             backdrop-filter: blur(10px);
         }
 
+        @keyframes slide {
+            0%, 20% { transform: translateX(0); }
+            25%, 45% { transform: translateX(-25%); }
+            50%, 70% { transform: translateX(-50%); }
+            75%, 95% { transform: translateX(-75%); }
+            100% { transform: translateX(0); }
+        }
+
         /* Product image styles */
         .product-image {
             position: relative;
@@ -309,6 +187,11 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .heritage-card:hover .product-image img {
+            transform: scale(1.1);
         }
 
         .quick-view {
@@ -319,6 +202,7 @@
             background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
             padding: 16px;
+            transition: bottom 0.3s ease;
             border-top: 1px solid var(--primary-red);
         }
 
@@ -331,10 +215,7 @@
             background: white;
             border: 1px solid rgba(196, 30, 58, 0.2);
             color: var(--charcoal);
-            padding: 0.5rem 1.5rem;
-            border-radius: 40px;
-            font-size: 0.9rem;
-            cursor: pointer;
+            transition: all 0.3s;
         }
 
         .heritage-chip:hover,
@@ -352,17 +233,18 @@
             padding: 0.75rem 1.5rem;
             border-radius: 12px;
             font-weight: 600;
+            transition: all 0.3s;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
             border: 1px solid var(--primary-red);
-            cursor: pointer;
-            text-decoration: none;
         }
 
         .btn-primary:hover {
             background: var(--primary-red-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -8px rgba(196, 30, 58, 0.4);
         }
 
         .btn-gold {
@@ -371,13 +253,14 @@
             padding: 0.75rem 1.5rem;
             border-radius: 12px;
             font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
+            transition: all 0.3s;
         }
 
         .btn-gold:hover {
             background: var(--gold-dark);
             color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -8px rgba(212, 175, 55, 0.4);
         }
 
         .btn-outline {
@@ -387,13 +270,13 @@
             padding: 0.75rem 1.5rem;
             border-radius: 12px;
             font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
+            transition: all 0.3s;
         }
 
         .btn-outline:hover {
             background: var(--primary-red);
             color: white;
+            transform: translateY(-2px);
         }
 
         /* Cart badge */
@@ -455,6 +338,12 @@
             border: none;
             color: var(--charcoal);
             cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .heritage-quantity button:hover {
+            background: rgba(196, 30, 58, 0.05);
+            color: var(--primary-red);
         }
 
         .heritage-quantity input {
@@ -510,19 +399,13 @@
         .border-gold {
             border-color: var(--gold);
         }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
     </style>
 </head>
 <body>
     <div id="root"></div>
     <script type="text/babel">
         (function() {
-            // ==================== FIXED PRODUCTS (BROKEN LINKS REPLACED) ====================
+            // ==================== PREMIUM PRODUCTS ====================
             const products = [
                 { 
                     id: 1, 
@@ -574,24 +457,24 @@
                 },
                 { 
                     id: 5, 
-                    name: 'Aether Bag', 
+                    name: 'Royal Bag', 
                     price: 320, 
                     category: 'Bags', 
-                    image: 'https://images.unsplash.com/photo-1547949003-9792a18a2601?w=800', 
-                    description: 'Premium techwear backpack with wireless charging. Aerospace-grade fabric.',
-                    details: ['Wireless charging', 'Aerospace fabric', 'Water-resistant', 'Laptop sleeve', 'RFID protection'],
+                    image: 'https://images.unsplash.com/photo-1622560480654-962b1f48a50d?w=800', 
+                    description: 'Premium drawstring bag with leather bottom and gold hardware.',
+                    details: ['Leather bottom', 'Gold hardware', 'Water-resistant', 'Internal pocket', 'Adjustable straps'],
                     stock: 35,
                     featured: true,
                     rating: 4.8
                 },
                 { 
                     id: 6, 
-                    name: 'Solar Cap', 
+                    name: 'Crest Cap', 
                     price: 200, 
                     category: 'Caps', 
-                    image: 'https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?w=800', 
-                    description: 'Solar-powered cap with UV sensor. Charges devices in emergencies.',
-                    details: ['Solar panel', 'UV sensor', 'Phone charging', 'Adjustable', 'Moisture-wicking'],
+                    image: 'https://images.unsplash.com/photo-1588850567220-85db1e1c816f?w=800', 
+                    description: 'Premium cotton cap with embroidered crest and gold underbill.',
+                    details: ['Embroidered crest', 'Gold underbill', 'Adjustable strap', 'Moisture-wicking', 'Premium cotton'],
                     stock: 40,
                     featured: true,
                     rating: 4.7
@@ -658,14 +541,14 @@
                 },
                 { 
                     id: 12, 
-                    name: 'Orbit Cap', 
+                    name: 'Classic Cap', 
                     price: 220, 
                     category: 'Caps', 
-                    image: 'https://images.unsplash.com/photo-1517941823-815bea90d291?w=800', 
-                    description: 'GPS-enabled cap with heads-up navigation display.',
-                    details: ['GPS navigation', 'Heads-up display', 'Bluetooth', 'Solar assist', 'Premium build'],
+                    image: 'https://images.unsplash.com/photo-1556909190-eccf4a8bf97a?w=800', 
+                    description: 'Classic six-panel with leather strap and gold buckle.',
+                    details: ['Leather strap', 'Gold buckle', 'Embroidered logo', 'UV protection', 'Premium build'],
                     stock: 45,
-                    featured: true,
+                    featured: false,
                     rating: 4.6
                 }
             ];
@@ -687,7 +570,9 @@
                 });
 
                 const login = async (email, password) => {
+                    // CHANGED: Password updated to Thembi01
                     if (email === 'nomathemba@gmail.com' && password === 'Thembi01') {
+                        // Get current SA time (UTC+2)
                         const saTime = new Date().toLocaleTimeString('en-ZA', { 
                             timeZone: 'Africa/Johannesburg',
                             hour: '2-digit', 
@@ -708,13 +593,25 @@
                         return { success: true, user: userData };
                     }
                     
-                    return { success: false, error: 'Invalid credentials. Please use the provided demo credentials.' };
+                    if (email && password) {
+                        const userData = { 
+                            id: 2, 
+                            email,
+                            firstName: email.split('@')[0],
+                            lastName: 'User',
+                            roles: ['ROLE_USER']
+                        };
+                        setUser(userData);
+                        localStorage.setItem('user', JSON.stringify(userData));
+                        return { success: true, user: userData };
+                    }
+                    
+                    return { success: false, error: 'Invalid credentials' };
                 };
 
                 const logout = () => {
                     setUser(null);
                     localStorage.removeItem('user');
-                    window.location.hash = '#/login';
                 };
 
                 const isAdmin = () => user?.roles?.includes('ROLE_ADMIN') || false;
@@ -868,12 +765,10 @@
                     if (lower.includes('hoodie')) response = 'Our Heritage Hoodies range from R450-R480, featuring gold embroidery.';
                     else if (lower.includes('shirt') || lower.includes('tee')) response = 'T-shirts start at R250. The Origin features our gold foil print.';
                     else if (lower.includes('bottle')) response = 'Legacy bottles from R180-R220 with gold accent rings.';
-                    else if (lower.includes('bag')) response = 'Our Aether Bag features wireless charging from R320.';
-                    else if (lower.includes('cap')) response = 'Solar Caps with phone charging start at R200.';
                     else if (lower.includes('shipping')) response = 'Free shipping on all orders. Delivery 3-5 business days.';
                     else if (lower.includes('return')) response = '30-day return policy with full refund guarantee.';
                     else if (lower.includes('mission')) response = '100% of proceeds fund youth development programs across South Africa.';
-                    else if (lower.includes('nomathemba') || lower.includes('thembi')) response = 'Welcome, Nomathemba! Your private preview is active.';
+                    else if (lower.includes('nomathemba') || lower.includes('thembi')) response = 'Welcome, Nomathemba! You have admin access.';
                     else if (lower.includes('hello') || lower.includes('hi')) response = 'Hello! How may I assist you today?';
                     else response = 'I can help with product info, pricing, shipping, and returns. What would you like to know?';
                     
@@ -943,13 +838,13 @@
                 );
             };
 
-            // ==================== WELCOME BANNER COMPONENT ====================
+            // ==================== WELCOME BANNER COMPONENT (NEW) ====================
             const WelcomeBanner = ({ user, onClose }) => {
                 if (!user) return null;
                 
                 return React.createElement(
                     'div',
-                    { className: 'bg-gradient-to-r from-primary-red to-gold text-white p-4 mb-6 rounded-xl shadow-lg relative float-banner' },
+                    { className: 'bg-gradient-to-r from-primary-red to-gold text-white p-4 mb-6 rounded-xl shadow-lg relative' },
                     React.createElement(
                         'button',
                         { 
@@ -1184,8 +1079,6 @@
                 const { getCount } = useCart();
                 const [menuOpen, setMenuOpen] = React.useState(false);
 
-                if (!user) return null;
-
                 return React.createElement(
                     'header',
                     { className: 'heritage-glass sticky top-0 z-40 border-b border-primary-red/10' },
@@ -1197,6 +1090,7 @@
                             { className: 'flex items-center justify-between h-16' },
                             React.createElement(Logo, null),
                             
+                            // CHANGED: Added Nomathemba name next to logo when logged in
                             user && React.createElement(
                                 'div',
                                 { className: 'hidden md:flex items-center gap-2 bg-primary-red/10 px-3 py-1 rounded-full' },
@@ -1219,12 +1113,13 @@
                             React.createElement(
                                 'div',
                                 { className: 'flex items-center gap-4' },
-                                React.createElement(
+                                user ? React.createElement(
                                     'div',
                                     { className: 'relative' },
                                     React.createElement(
                                         'button',
                                         { onClick: () => setMenuOpen(!menuOpen), className: 'flex items-center gap-2 text-sm font-medium text-gray-700' },
+                                        // CHANGED: Show Nomathemba initial 'N'
                                         React.createElement('div', { className: 'w-8 h-8 bg-primary-red rounded-full flex items-center justify-center text-white text-xs' }, 'N'),
                                         React.createElement('span', null, 'Nomathemba'),
                                         React.createElement('i', { className: 'fa-solid fa-chevron-down text-xs text-gray-400' })
@@ -1243,6 +1138,10 @@
                                             'Sign out'
                                         )
                                     )
+                                ) : React.createElement(
+                                    'a',
+                                    { href: '#/login', className: 'btn-primary text-sm py-2 px-4' },
+                                    'Sign in'
                                 )
                             )
                         )
@@ -1257,8 +1156,6 @@
                 const [selectedCategory, setSelectedCategory] = React.useState('All');
                 const [showWelcome, setShowWelcome] = React.useState(true);
 
-                if (!user) return null;
-
                 const filtered = products.filter(p => 
                     (selectedCategory === 'All' || p.category === selectedCategory) &&
                     (search === '' || p.name.toLowerCase().includes(search.toLowerCase()) || p.description.toLowerCase().includes(search.toLowerCase()))
@@ -1271,11 +1168,13 @@
                         'div',
                         { className: 'container mx-auto px-4 py-8' },
                         
+                        // NEW: Welcome banner (shows only once after login)
                         showWelcome && React.createElement(WelcomeBanner, { 
                             user: user, 
                             onClose: () => setShowWelcome(false) 
                         }),
                         
+                        // Welcome section
                         React.createElement(
                             'div',
                             { className: 'heritage-card p-8 mb-8 text-center' },
@@ -1285,8 +1184,10 @@
                             )
                         ),
 
+                        // Auto-sliding showcase
                         React.createElement(SlidingShowcase, null),
 
+                        // Search and categories
                         React.createElement(
                             'div',
                             { className: 'mb-8 space-y-4' },
@@ -1317,6 +1218,7 @@
                             )
                         ),
 
+                        // Featured products
                         React.createElement(
                             'div',
                             null,
@@ -1333,6 +1235,7 @@
                             )
                         ),
 
+                        // Stats section
                         React.createElement(
                             'div',
                             { className: 'grid md:grid-cols-3 gap-6 my-12' },
@@ -1361,11 +1264,8 @@
 
             // ==================== SHOP PAGE ====================
             const Shop = () => {
-                const { user } = useAuth();
                 const [search, setSearch] = React.useState('');
                 const [selectedCategory, setSelectedCategory] = React.useState('All');
-
-                if (!user) return null;
 
                 const filtered = products.filter(p => 
                     (selectedCategory === 'All' || p.category === selectedCategory) &&
@@ -1380,6 +1280,7 @@
                         { className: 'container mx-auto px-4' },
                         React.createElement('h1', { className: 'text-3xl font-bold text-gray-800 mb-8' }, 'All Products'),
                         
+                        // Search and filters
                         React.createElement(
                             'div',
                             { className: 'mb-8 space-y-4' },
@@ -1410,10 +1311,12 @@
                             )
                         ),
 
+                        // Results count
                         React.createElement('p', { className: 'text-sm text-gray-500 mb-6' }, 
                             `Showing ${filtered.length} product${filtered.length !== 1 ? 's' : ''}`
                         ),
 
+                        // Products grid
                         filtered.length === 0 ? React.createElement(
                             'div',
                             { className: 'text-center py-12' },
@@ -1430,10 +1333,8 @@
 
             // ==================== CART PAGE ====================
             const Cart = () => {
-                const { user } = useAuth();
                 const { items, removeFromCart, updateQuantity, getTotal } = useCart();
-
-                if (!user) return null;
+                const { user } = useAuth();
 
                 if (items.length === 0) {
                     return React.createElement(
@@ -1512,8 +1413,8 @@
                             ),
                             React.createElement(
                                 'a',
-                                { href: '#/checkout', className: 'btn-primary w-full text-center block' },
-                                'Proceed to checkout'
+                                { href: user ? '#/checkout' : '#/login', className: 'btn-primary w-full text-center block' },
+                                user ? 'Proceed to checkout' : 'Sign in to checkout'
                             )
                         )
                     )
@@ -1533,7 +1434,7 @@
                     if (result.success) {
                         window.location.hash = '#/';
                     } else {
-                        setError(result.error);
+                        setError('Invalid email or password');
                     }
                 };
 
@@ -1547,6 +1448,7 @@
                             'div',
                             { className: 'text-center mb-8' },
                             React.createElement('div', { className: 'w-16 h-16 bg-primary-red rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4' }, 'ATS'),
+                            // CHANGED: Added "From Motlwang" message
                             React.createElement('h2', { className: 'text-2xl font-bold text-gray-800' }, 'From Motlwang'),
                             React.createElement('p', { className: 'text-gray-500 text-sm mt-2' }, 'This private demo has been prepared for you.')
                         ),
@@ -1557,6 +1459,7 @@
                             error
                         ),
 
+                        // CHANGED: Updated credentials display
                         React.createElement(
                             'div',
                             { className: 'bg-gray-50 p-4 rounded-lg mb-6 text-sm border border-primary-red/20' },
@@ -1595,10 +1498,7 @@
 
             // ==================== CHECKOUT PAGE ====================
             const Checkout = () => {
-                const { user } = useAuth();
                 const { items, getTotal } = useCart();
-
-                if (!user) return null;
                 
                 return React.createElement(
                     'div',
@@ -1651,26 +1551,20 @@
             };
 
             // ==================== SUCCESS PAGE ====================
-            const Success = () => {
-                const { user } = useAuth();
-
-                if (!user) return null;
-
-                return React.createElement(
+            const Success = () => React.createElement(
+                'div',
+                { className: 'heritage-bg min-h-screen flex items-center justify-center' },
+                React.createElement(
                     'div',
-                    { className: 'heritage-bg min-h-screen flex items-center justify-center' },
-                    React.createElement(
-                        'div',
-                        { className: 'heritage-card p-8 text-center max-w-md' },
-                        React.createElement('div', { className: 'w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4' },
-                            React.createElement('i', { className: 'fa-solid fa-check text-3xl text-green-600' })
-                        ),
-                        React.createElement('h1', { className: 'text-2xl font-bold text-gray-800 mb-3' }, 'Thank you, Nomathemba!'),
-                        React.createElement('p', { className: 'text-gray-500 mb-6' }, 'Your order has been confirmed.'),
-                        React.createElement('a', { href: '#/shop', className: 'btn-primary inline-block' }, 'Continue shopping')
-                    )
-                );
-            };
+                    { className: 'heritage-card p-8 text-center max-w-md' },
+                    React.createElement('div', { className: 'w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4' },
+                        React.createElement('i', { className: 'fa-solid fa-check text-3xl text-green-600' })
+                    ),
+                    React.createElement('h1', { className: 'text-2xl font-bold text-gray-800 mb-3' }, 'Thank you!'),
+                    React.createElement('p', { className: 'text-gray-500 mb-6' }, 'Your order has been confirmed. You\'ll receive a confirmation email shortly.'),
+                    React.createElement('a', { href: '#/shop', className: 'btn-primary inline-block' }, 'Continue shopping')
+                )
+            );
 
             // ==================== ADMIN DASHBOARD ====================
             const AdminDashboard = () => {
@@ -1721,102 +1615,94 @@
             };
 
             // ==================== FOOTER ====================
-            const Footer = () => {
-                const { user } = useAuth();
-                
-                if (!user) return null;
-                
-                return React.createElement(
-                    'footer',
-                    { className: 'heritage-glass border-t border-primary-red/10 mt-20' },
+            const Footer = () => React.createElement(
+                'footer',
+                { className: 'heritage-glass border-t border-primary-red/10 mt-20' },
+                React.createElement(
+                    'div',
+                    { className: 'container mx-auto px-4 py-12' },
                     React.createElement(
                         'div',
-                        { className: 'container mx-auto px-4 py-12' },
+                        { className: 'grid md:grid-cols-4 gap-8' },
+                        // About
                         React.createElement(
                             'div',
-                            { className: 'grid md:grid-cols-4 gap-8' },
-                            React.createElement(
-                                'div',
-                                null,
-                                React.createElement(Logo, null),
-                                React.createElement('p', { className: 'text-sm text-gray-600 mt-4 leading-relaxed' },
-                                    'Developing young people from cradle to career. NPO: 021-892 | PBO: 18/11/13/2470'
-                                )
-                            ),
-                            React.createElement(
-                                'div',
-                                null,
-                                React.createElement('h4', { className: 'font-bold text-gray-800 mb-4' }, 'FOUNDATION'),
-                                React.createElement('p', { className: 'text-sm text-gray-600 mb-2' }, 'Ground Floor, Eastwood Building'),
-                                React.createElement('p', { className: 'text-sm text-gray-600 mb-2' }, '57 6th Road, Hyde Park'),
-                                React.createElement('p', { className: 'text-sm text-gray-600 mb-4' }, 'South Africa'),
-                                React.createElement('p', { className: 'text-sm text-gray-700' }, React.createElement('i', { className: 'fa-solid fa-phone mr-2 text-primary-red' }), '+27 11 325 5914'),
-                                React.createElement('p', { className: 'text-sm text-gray-700' }, React.createElement('i', { className: 'fa-solid fa-envelope mr-2 text-primary-red' }), 'info@afrikatikkun.org')
-                            ),
-                            React.createElement(
-                                'div',
-                                null,
-                                React.createElement('h4', { className: 'font-bold text-gray-800 mb-4' }, 'SERVICES'),
-                                React.createElement('p', { className: 'text-sm text-gray-600 mb-2' }, 'Afrika Tikkun Services'),
-                                React.createElement('p', { className: 'text-sm text-gray-600 mb-2' }, '1 Bond Street, Kensington B'),
-                                React.createElement('p', { className: 'text-sm text-gray-600 mb-4' }, 'Randburg, South Africa'),
-                                React.createElement('p', { className: 'text-sm text-gray-700' }, React.createElement('i', { className: 'fa-solid fa-phone mr-2 text-primary-red' }), '+27 11 325 6123'),
-                                React.createElement('p', { className: 'text-sm text-gray-700' }, React.createElement('i', { className: 'fa-solid fa-envelope mr-2 text-primary-red' }), 'info@afrikatikkunservices.com')
-                            ),
-                            React.createElement(
-                                'div',
-                                null,
-                                React.createElement('h4', { className: 'font-bold text-gray-800 mb-4' }, 'NEWSLETTER'),
-                                React.createElement('p', { className: 'text-sm text-gray-600 mb-4' }, 'Subscribe for updates and impact stories.'),
-                                React.createElement(
-                                    'div',
-                                    { className: 'flex gap-2' },
-                                    React.createElement('input', {
-                                        type: 'email',
-                                        placeholder: 'Email address',
-                                        className: 'flex-1 border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 focus:outline-none focus:border-primary-red'
-                                    }),
-                                    React.createElement('button', { className: 'btn-primary text-sm py-2' }, 'Subscribe')
-                                ),
-                                React.createElement(
-                                    'div',
-                                    { className: 'flex gap-4 mt-6' },
-                                    React.createElement('a', { href: '#', className: 'text-gray-500 hover:text-primary-red transition' }, React.createElement('i', { className: 'fab fa-linkedin text-lg' })),
-                                    React.createElement('a', { href: '#', className: 'text-gray-500 hover:text-primary-red transition' }, React.createElement('i', { className: 'fab fa-twitter text-lg' })),
-                                    React.createElement('a', { href: '#', className: 'text-gray-500 hover:text-primary-red transition' }, React.createElement('i', { className: 'fab fa-instagram text-lg' })),
-                                    React.createElement('a', { href: '#', className: 'text-gray-500 hover:text-primary-red transition' }, React.createElement('i', { className: 'fab fa-youtube text-lg' }))
-                                )
+                            null,
+                            React.createElement(Logo, null),
+                            React.createElement('p', { className: 'text-sm text-gray-600 mt-4 leading-relaxed' },
+                                'Developing young people from cradle to career. NPO: 021-892 | PBO: 18/11/13/2470'
                             )
                         ),
+                        // Foundation
                         React.createElement(
                             'div',
-                            { className: 'border-t border-gray-200 mt-12 pt-8 text-center text-sm text-gray-500' },
-                            React.createElement('p', null, '© 2026 Afrika Tikkun. All rights reserved.'),
-                            React.createElement('p', { className: 'mt-2' }, 'Created by Motlwang for Nomathemba')
+                            null,
+                            React.createElement('h4', { className: 'font-bold text-gray-800 mb-4' }, 'FOUNDATION'),
+                            React.createElement('p', { className: 'text-sm text-gray-600 mb-2' }, 'Ground Floor, Eastwood Building'),
+                            React.createElement('p', { className: 'text-sm text-gray-600 mb-2' }, '57 6th Road, Hyde Park'),
+                            React.createElement('p', { className: 'text-sm text-gray-600 mb-4' }, 'South Africa'),
+                            React.createElement('p', { className: 'text-sm text-gray-700' }, React.createElement('i', { className: 'fa-solid fa-phone mr-2 text-primary-red' }), '+27 11 325 5914'),
+                            React.createElement('p', { className: 'text-sm text-gray-700' }, React.createElement('i', { className: 'fa-solid fa-envelope mr-2 text-primary-red' }), 'info@afrikatikkun.org')
+                        ),
+                        // Services
+                        React.createElement(
+                            'div',
+                            null,
+                            React.createElement('h4', { className: 'font-bold text-gray-800 mb-4' }, 'SERVICES'),
+                            React.createElement('p', { className: 'text-sm text-gray-600 mb-2' }, 'Afrika Tikkun Services'),
+                            React.createElement('p', { className: 'text-sm text-gray-600 mb-2' }, '1 Bond Street, Kensington B'),
+                            React.createElement('p', { className: 'text-sm text-gray-600 mb-4' }, 'Randburg, South Africa'),
+                            React.createElement('p', { className: 'text-sm text-gray-700' }, React.createElement('i', { className: 'fa-solid fa-phone mr-2 text-primary-red' }), '+27 11 325 6123'),
+                            React.createElement('p', { className: 'text-sm text-gray-700' }, React.createElement('i', { className: 'fa-solid fa-envelope mr-2 text-primary-red' }), 'info@afrikatikkunservices.com')
+                        ),
+                        // Newsletter
+                        React.createElement(
+                            'div',
+                            null,
+                            React.createElement('h4', { className: 'font-bold text-gray-800 mb-4' }, 'NEWSLETTER'),
+                            React.createElement('p', { className: 'text-sm text-gray-600 mb-4' }, 'Subscribe for updates and impact stories.'),
+                            React.createElement(
+                                'div',
+                                { className: 'flex gap-2' },
+                                React.createElement('input', {
+                                    type: 'email',
+                                    placeholder: 'Email address',
+                                    className: 'flex-1 border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 focus:outline-none focus:border-primary-red'
+                                }),
+                                React.createElement('button', { className: 'btn-primary text-sm py-2' }, 'Subscribe')
+                            ),
+                            React.createElement(
+                                'div',
+                                { className: 'flex gap-4 mt-6' },
+                                React.createElement('a', { href: '#', className: 'text-gray-500 hover:text-primary-red transition' }, React.createElement('i', { className: 'fab fa-linkedin text-lg' })),
+                                React.createElement('a', { href: '#', className: 'text-gray-500 hover:text-primary-red transition' }, React.createElement('i', { className: 'fab fa-twitter text-lg' })),
+                                React.createElement('a', { href: '#', className: 'text-gray-500 hover:text-primary-red transition' }, React.createElement('i', { className: 'fab fa-instagram text-lg' })),
+                                React.createElement('a', { href: '#', className: 'text-gray-500 hover:text-primary-red transition' }, React.createElement('i', { className: 'fab fa-youtube text-lg' }))
+                            )
                         )
+                    ),
+                    React.createElement(
+                        'div',
+                        { className: 'border-t border-gray-200 mt-12 pt-8 text-center text-sm text-gray-500' },
+                        React.createElement('p', null, '© 2026 Afrika Tikkun. All rights reserved.'),
+                        React.createElement('p', { className: 'mt-2' }, 'This project was created by Commercia and supported by FMTALI.')
                     )
-                );
-            };
+                )
+            );
 
             // ==================== MAIN APP ====================
             const App = () => {
                 const [currentPath, setCurrentPath] = React.useState(window.location.hash || '#/');
-                const { user } = useAuth();
 
                 React.useEffect(() => {
                     const handleHashChange = () => setCurrentPath(window.location.hash || '#/');
                     window.addEventListener('hashchange', handleHashChange);
-                    if (!window.location.hash) {
-                        window.location.hash = '#/login';
-                    }
+                    if (!window.location.hash) window.location.hash = '#/';
                     return () => window.removeEventListener('hashchange', handleHashChange);
                 }, []);
 
                 const renderPage = () => {
                     const path = currentPath.split('?')[0];
-                    
-                    if (path === '#/login') return React.createElement(Login);
-                    if (!user) return React.createElement(Login);
                     
                     if (path.startsWith('#/product/')) return React.createElement(ProductDetail);
                     if (path === '#/admin') return React.createElement(AdminDashboard);
@@ -1824,6 +1710,7 @@
                     if (path === '#/cart') return React.createElement(Cart);
                     if (path === '#/checkout') return React.createElement(Checkout);
                     if (path === '#/success') return React.createElement(Success);
+                    if (path === '#/login') return React.createElement(Login);
                     
                     return React.createElement(Home);
                 };
@@ -1837,10 +1724,10 @@
                         React.createElement(
                             'div',
                             { className: 'heritage-bg min-h-screen' },
-                            user && React.createElement(Header, null),
+                            React.createElement(Header, null),
                             React.createElement('main', null, renderPage()),
-                            user && React.createElement(Footer, null),
-                            user && React.createElement(ChatBot, null)
+                            React.createElement(Footer, null),
+                            React.createElement(ChatBot, null)
                         )
                     )
                 );
